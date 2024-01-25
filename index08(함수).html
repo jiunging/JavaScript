@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 호출
+        a()
+        var result = b(1,2,"엄");
+        console.log(result);
+
+        //매개변수 없고, 반환도 없는 모형
+        function a() {
+            console.log("hello world")
+        }
+
+        // 매개변수, 리턴 {
+        function b(x, y, z) {
+            var result = x + y + z;
+            return result; // 값의 반환
+        }
+
+        //////////////////////////////////////////////////
+        var func = b; // 함수를 변수에 저장할 수 있다
+        var k = func(1,2,3);
+        console.log(k);
+        
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        var num1 = 10;
+        if(num1 === 10) {
+            var num1 = 100;
+            var num2 = 200;
+        }
+
+        console.log(num1); // 100
+        console.log(num2); // 200
+
+        for(var i = 1; i <= 10; i++) {
+            console.log("hello world");
+        }
+
+        console.log(i); // 11 - i가 살아있음
+
+        //////////////지역과 전역을 나누는 기준은 함수////////////////
+        
+        function add() {
+            var x = 1; // 지역변수
+        }
+
+        add();
+        // console.log(x);
+
+        console.log("-------------------------------")
+
+        // let 변수 - es6
+        // let - 스코프가 중괄호, 변수의 중복 선언 x
+        let a = 10;
+        if(a === 10) {
+            let b = 100; // 지역변수
+        }
+        console.log(b);
+
+
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,5];
+
+        // 향상된 for문 for ~ in
+        for(var a in arr) {
+            console.log(a, arr[a]);// 인덱스를 저장함, 값을 사용
+        }
+
+        var obj = {"a" : 100, "b" : 200, "c" : 300};
+        for(var a in obj) {
+            console.log(a, obj[a]);
+        }
+
+        console.log("--------------------------------")
+        ///////////////////////////////////////////////
+        //break - 반복 중단, continue - 반복 다음                                                               
+
+        for(var i = 0; i < arr.length; i++) {
+            if(i == 3) continue;
+            console.log(arr[i])
+        }
+
+
+
+    </script>
+    
+</body>
+</html>

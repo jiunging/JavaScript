@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 형변환 함수
+        // parseInt(), parseFloat()
+        // var x = Math.random() * 100
+        var x = parseInt( (Math.random() * 100) );
+        console.log("랜덤값: " + x);
+
+        if(x >= 60) {
+            console.log("합격입니다!")
+        } else if(x >= 50) {
+            console.log("보류중입니다")
+        } else {
+            console.log("불합격입니다")
+        }
+
+        //////////////////////////////////////////
+        var a = "홍길동"
+
+        switch(a) {
+            case "이순신":
+                console.log("이순신입니다")
+                break;
+
+            case "홍길동":
+                console.log("홍길동입니다")
+                break;
+
+            case "강감찬":
+                console.log("강감찬입니다")
+                break;
+
+            default:
+                break;
+            
+        }
+
+
+    </script>
+    
+</body>
+</html>

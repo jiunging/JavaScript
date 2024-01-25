@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function func1() {
+            console.log("hello world");
+        }
+
+        function func2() {
+            console.log("hello2");
+        }
+
+        // 페이지 실행 시 동작시킬 내용을 작성할 수 있음 (필수 x)
+        (function(a,b,c) {
+            console.log("즉시실행함수", a, b, c)
+            
+            func1();
+            func2();
+        })(1,2,3);
+    </script>
+    
+</body>
+</html>

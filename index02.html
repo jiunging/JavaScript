@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 동일 변수 선언이 가능하다(피하는게 좋음)
+        var a = 1;
+        var a = '10'; // 문자
+        var b = "10"; // 문자
+
+        b = "hello"; // 변수의 변경
+        a = 3.14; // 변수의 변경
+
+        var c = a + 5; // hello3.14
+
+        console.log(a + b); // 문자
+        console.log(a, b, 1, 2, 3, 4, 5)
+
+        var x = true;
+        console.log(x)
+
+        var y; // 값을 선언했는데, 초기값을 지정하지 않은 경우 undefined
+        console.log(y)
+
+        var z = document.getElementById("aaa");
+        console.log(z)
+
+        // 타입을 확인하는 키워드 typeof
+        console.log(typeof a)
+        console.log(typeof b)
+        console.log(typeof x)
+        console.log(typeof y)
+        console.log(typeof z)
+        
+
+    </script>
+    
+</body>
+</html>

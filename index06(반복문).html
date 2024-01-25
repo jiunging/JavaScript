@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 1~10까지 합
+        var i = 1;
+        var sum = 0; // 합계
+
+        while(i <= 10) {
+            // console.log(i);
+            sum += i;
+
+            i++;
+        }
+        console.log("합계: " + sum);
+
+        ///////////////////////////////////////////////
+        var sum2 = 0;
+        for(var i = 1; i <= 10; i++) {
+            console.log(i)
+            sum2 += i;
+        }
+        console.log("for문 합계: " + sum2)
+
+        ////////////////////////////////////////////////
+        // 빈 배열을 하나 선언하고, 1부터 20까지 순서대로 저장.
+        var arr = new Array();
+        for(var i = 1; i <= 20; i++) {
+            arr.push(i);
+        }
+
+        // 이 배열을 반복문으로 돌려서 출력
+        for(var i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+
+    </script>
+    
+</body>
+</html>

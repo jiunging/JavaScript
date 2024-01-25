@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 클로저를 통해서 getter, setter
+        function aaa() {
+            var name = "홍길동";
+
+            // return function(x) {
+            //     name = x;
+            //     return name;
+            // }
+            return {
+                getName: function() {
+                    return name;
+                },
+                setName: function(x) {
+                    name = x;
+                }
+            }
+        }// name의 스코프는 여기가 끝
+
+        // var f = aaa();
+        // var result = f("엄준식");
+        // console.log(result);
+
+        var obj = aaa();
+        console.log(obj);
+
+        obj.setName("엄중식"); // setter
+        var name = obj.getName(); // getter
+        console.log(name);
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
