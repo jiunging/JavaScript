@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        input:focus {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <p>아이디나 비밀번호가 변경될 때마다 다음을 구현하세요</p>
+    <p>힌트: 이벤트 onchange, onkeyup</p>
+
+    아이디 <input type="text" id="id1" style="border: 3px solid #999">
+    <P id="write"></P>
+
+    <script>
+        var input = document.getElementById("id1");
+        var write = document.getElementById("write");
+
+
+        input.onkeyup = function() {
+            if(input.value.length > 3) {
+                write.innerHTML = "";  
+                input.style.borderColor = "green";
+            } else {
+                write.innerHTML = "4글자 이상으로 해라 ㅋㅋ";
+                input.style.borderColor = "red";
+            }
+        }
+    </script>
+
+    <form>
+        <input type="text" name="id">
+        <div id="msg"></div>
+    </form>
+
+    <script>
+        var input2 = document.querySelector("input[name=id]")
+
+        input2.onkeyup = function() {
+
+        if(input2.value.length > 3) {
+            input2.style.border = "1px solid green";
+            msg.innerHTML = "";
+        } else {
+            input2.style.border = "1px solid red";
+            msg.innerHTML = "아이디는 4글자 이상임";
+
+        }
+    }
+
+
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>자바스크립트 카운트</h3>
+
+    <input type ="text" id="title">
+    <button type="button" id="plus" onclick="plusbutton(this)">+</button>
+    <button type="button" id="minus" onclick="minusbutton(this)">-</button>
+
+    <script>
+        var plus = document.getElementById("plus");
+        var minus = document.getElementById("minus");
+        var count = 0;
+        
+
+        function plusbutton() {
+            count += 1;
+            title.value = count;
+        }
+        function minusbutton() {
+            if(count <= 0) {
+                alert("0 미만으로 내려갈 수 없습니다.");
+                return;
+            }
+            count -= 1;
+            title.value = count;
+        }
+
+    </script>
+    
+    <hr>
+
+    <pre>
+        1. 예약버튼 클릭시 좌석이 최소한개이상 체크되어있지 않다면 경고창을 띄우는 코드를 작성하세요.
+        2. 체크된 값은 예약확인란에 출력해주세요.
+        3. 힌트 - 버튼클릭시 배열에 값을 저장하고, 화면에는 문자열로 만들어 출력 합니다.😊
+    </pre>
+
+    <div>
+        좌석: 
+            <input type="checkbox" class=seat value="1">1
+            <input type="checkbox" class=seat value="2">2
+            <input type="checkbox" class=seat value="3">3
+            <input type="checkbox" class=seat value="4">4
+            <input type="checkbox" class=seat value="5">5
+            <input type="checkbox" class=seat value="6">6
+            <input type="checkbox" class=seat value="7">7
+            <input type="checkbox" class=seat value="8"">8
+            <input type="checkbox" class=seat value="9">9
+            <input type="checkbox" class=seat value="10">10
+            <br>
+
+            <button id="btn">예약</button>
+            <br>
+            예약번호: 
+            <p id="title2"></p>
+
+            <br>
+    </div>
+
+    <script>
+        var check = document.getElementsByClassName("seat"); // 좌석들
+        var btn = document.getElementById("btn"); // 버튼
+        var title2 = document.getElementById("title2"); // 출력할거
+
+        btn.onclick = function() {
+            var bool = false;
+            var sum = "";
+            var arr = []; // 좌석 저장할 배열
+
+            console.log("흠");
+            for(var i = 0; i < check.length; i++) {
+                if(check[i].checked) {
+                    // sum += i+1 + "번 ";
+                    // title2.innerHTML = sum;
+                    arr.push(check[i].value);
+
+                    bool = true;
+                }
+            }
+            
+            if(bool === false) {
+                alert("좌석 하나 이상을 지정해주세요");
+                sum = "";
+                title2.innerHTML = "";
+            } else {
+                title2.innerHTML = arr.join("번, ") + "번";
+            }
+            
+        }
+        
+    </script>
+
+
+
+</body>
+</html>
