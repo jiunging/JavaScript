@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="btn">클릭!</button>
+    <ul class="list">
+        <li>홍길동</li>
+        <li>이순신</li>
+        <li>홍길자</li>
+    </ul>
+
+    <button type="button" id="btn2">클릭!!!!</button>
+    <ul class="list2">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+
+    <script>
+        // querySelector(선택자)
+        var li = document.querySelector(".list li"); // 가장 첫 번째에 발견되는 태그
+        
+        var btn = document.querySelector("#btn"); // 아이디가 btn인 태그
+
+        btn.onclick = function() {
+            li.style.backgroundColor = "red";
+        }
+
+        //////////////////////////////////////////////////////////
+        // querySelectorAll(선택자)
+        var lis = document.querySelectorAll(".list2 li"); // list2 하위에 li태그 전체(배열)
+        var btn2 = document.querySelector("#btn2"); // 아이디가 btn2인 태그
+
+        btn2.onclick = function() {
+            for(var i = 0; i < lis.length; i++) {
+                lis[i].style.backgroundColor = "red";
+            }
+        }
+
+
+    </script>
+
+
+    
+</body>
+</html>

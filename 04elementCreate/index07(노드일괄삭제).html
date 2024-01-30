@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {border-spacing: 0; border-collapse: collapse;}
+        thead th, tbody td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <button button="type" id="del">일괄 삭제</button>
+    <table >
+        <thead>
+            <th><input type="checkbox" class="allCheck"></th>
+            <th>번호</th>
+            <th>이름</th>
+            <th>내용</th>
+            <th>날짜</th>
+        </thead>
+
+        <tbody class="table">
+        <tr>
+            <td><input type="checkbox" class="check"></td>
+            <td>1</td>
+            <td>홍길자</td>
+            <td>안녕!</td>
+            <td>2019-01-01</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="check"></td>
+            <td>2</td>
+            <td>김길자</td>
+            <td>안녕!</td>
+            <td>2019-01-01</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="check"></td>
+            <td>3</td>
+            <td>이길자</td>
+            <td>안녕!</td>
+            <td>2019-01-01</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" class="check"></td>
+            <td>4</td>
+            <td>고길자</td>
+            <td>안녕!</td>
+            <td>2019-01-01</td>
+        </tr>
+
+        </tbody>
+
+
+    </table>
+
+    <script>
+        var del = document.getElementById("del"); // 삭제 버튼
+        var check = document.querySelectorAll(".check"); // 체크박스들
+        var allCheck = document.querySelector(".allCheck"); // 전체선택 체크박스
+
+        // 체크하고 삭제하는거
+        del.onclick = function() {
+            for(var i = 0; i < check.length; i++) {
+                if(check[i].checked) {// 체크가 돼있다면
+                    check[i].parentElement.parentElement.remove(); // 부모 2번 올라가서 삭제
+                }
+            }
+        }
+    
+        // 전체선택, 선택 풀기
+        allCheck.onclick = function() {
+            // console.log(allCheck.checked);
+
+            if(allCheck.checked) {
+                for(var i = 0; i < check.length; i++) {
+                    check[i].checked = true;
+                }
+            } else {
+                for(var i = 0; i < check.length; i++) {
+                    check[i].checked = false;
+                }
+            }
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>

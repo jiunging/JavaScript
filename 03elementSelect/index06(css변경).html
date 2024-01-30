@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+    <h3>태그의 속성변경, 태그의 css변경</h3>
+
+    <img src="img/1.jpg" width="500" class="img" style="border: 3px solid #000;">
+    <select class="sel">
+        <option value="1.jpg">봄</option>
+        <option value="2.jpg">여름</option>
+        <option value="3.jpg">가을</option>
+        <option value="4.jpg">겨울</option>
+    </select>
+
+    <button type="button" id="btn">사진바꾸기</button>
+    <input type="color" class="color">
+    <button type="button" id="colorBtn">색상바꾸기</button>
+
+    <script>
+        var btn = document.getElementById("btn"); // 버튼태그
+        var img = document.querySelector(".img"); // img태그
+        var sel = document.querySelector(".sel"); // select태그
+
+            btn.onclick = function() {
+                img.src = "img/"+ sel.value;
+            }
+
+            var colorBtn = document.getElementById("colorBtn"); //color btn
+            var color = document.querySelector(".color"); // color input
+
+            colorBtn.onclick = function() {
+                // img.style.css스타일
+                // fontSize, backgroundColor, boxShadow ...
+                img.style.borderColor = color.value; // 이러면 원하는대로 바뀜
+
+            }
+    </script> -->
+
+    <h3>태그의 속성변경, 태그의 css변경</h3>
+
+    <img src="img/1.jpg" width="500" class="img" style="border: 3px solid #000;">
+    <select class="sel">
+        <option value="1.jpg">봄</option>
+        <option value="2.jpg">여름</option>
+        <option value="3.jpg">가을</option>
+        <option value="4.jpg">겨울</option>
+    </select>
+
+    <input type="color" class="color2">
+
+    <script>
+        var img2 = document.querySelector(".img"); // 이미지태그
+        var sel2 = document.querySelector(".sel"); // select태그
+
+        sel2.onchange = function () {
+            img2.src = "img/" + sel2.value;
+        }
+
+        var color2 = document.querySelector(".color2"); // color 가져오기
+        
+        color2.onchange = function() {
+            img2.style.borderColor = color2.value;
+        }
+
+    </script>
+
+
+
+
+    
+</body>
+</html>
