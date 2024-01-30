@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>DOM - 엘리먼트를 선택하는 방법</h3>
+    
+    <button id="btn">체크박스요소확인</button>
+    <input type="checkbox" name="inter" value="1">자바
+    <input type="checkbox" name="inter" value="2">JSP
+    <input type="checkbox" name="inter" value="3">CSS
+    <input type="checkbox" name="inter" value="4">JS
+
+
+    <script>
+        var arr = document.getElementsByName("inter"); // name이 inter 값을 배열로 얻는다
+        console.log(arr);
+        var btn = document.getElementById("btn");
+
+        btn.onclick = function() {
+            for(var i = 0; i < arr.length; i++) {
+                console.log(arr[i]);
+                console.log(arr[i].value);
+                console.log(arr[i].type);
+            }
+        }
+
+    </script>
+
+
+    <hr>
+    <button id="btn2">라디오버튼확인</button>
+    <input type="radio" class="hello" value="a">프로그램
+    <input type="radio" class="hello" value="b">디자인
+    <input type="radio" class="hello" value="c">시스템
+    <input type="radio" class="hello" value="d">운영체제
+
+    <script>
+        var btn2 = document.getElementById("btn2");
+        var arr2 = document.getElementsByClassName("hello"); // 클래스명이 hello인 태그 얻음
+        btn2.onclick = function() {
+
+            for(var i = 0; i < arr2.length; i++) {
+                console.log(arr2[i]);
+            }
+
+        }
+    </script>
+
+    <hr>
+
+    
+
+    <button type="button" id="btn3">셀렉트요소 확인</button>
+    <select id="search">
+        <option>홍길동</option>
+        <option>이순신</option>
+        <option>엄준식</option>
+    </select>
+
+    <select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+    </select>
+
+    <script>
+        console.log("===============");
+
+        // var options = document.getElementsByTagName("option");
+        // console.log(options);
+        var select = document.getElementById("search");
+        // console.log(search);
+        // console.log(document);
+        var options = select.getElementsByTagName("option"); // 이 셀렉트 태그에서만 검색
+        console.log(options);
+
+
+        var btn3 = document.getElementById("btn3");
+        btn3.onclick = function() {
+            
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

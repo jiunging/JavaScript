@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <script>
+
+    // 버튼보다, script가 위에 작성되는 경우는, 화면 로딩 이후에 이벤트를 걸어준다.
+    // 단, onload이벤트는 화면에서 1개만 사용가능하다.
+
+    // 화면이 모두 로드된 이후에 실행된다.
+    window.onload = function() {
+
+        // 프로그램 코드로 버튼객체를 얻는다.
+        var btn = document.getElementById("btn"); // 버튼을 받아옴
+        btn.onclick = function() {
+            alert("바보");
+        }
+    }
+
+    </script>
+
+        <h3>기본이벤트</h3>
+        <button type="button" id="btn">버튼</button>
+
+</body>
+</html>

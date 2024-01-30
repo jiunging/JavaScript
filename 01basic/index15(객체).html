@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var a = {name: "홍길동", age: 20, arr: [1,2,3], func: function() {} };
+
+        // 사용법 2가지
+        // console.log(typeof a); // object
+        // console.log(a.name); // 홍길동
+        // console.log(a.age); // 20
+        // console.log(a.arr); // (3), [1,2,3]
+        // a.func()
+
+        // 2nd
+        console.log(a["name"]); // 홍길동
+        console.log(a["age"]); // 20
+        console.log(a["arr"]); // (3), [1,2,3]
+        console.log(a["arr"][0]); // 1
+        console.log(a["func"]); // f () {}
+
+        console.log("------------------------------------------------")
+
+        var exam = {math: 80, eng: 70, kor: 90};
+
+        var person = {
+            name: "엄준식", 
+            exam: exam
+        };
+
+        // person안에 exam안에 있는 eng값을 참조하는 2가지 방법
+        console.log(person);
+
+        console.log(person.exam.eng);
+        console.log(person["exam"].eng);
+        console.log(person["exam"]["eng"]);
+        console.log(person.exam["eng"]);
+
+        // 배열 안에 객체
+        var arr = [
+            {id: 1, title: "hello", regdate: '2020-11-12'},
+            {id: 2, title: "hello", regdate: '2020-11-13'},
+            {id: 3, title: "hello", regdate: '2020-11-14'},
+        ]
+        // 출력
+        console.log(arr[0].id); // 1
+        console.log(arr[0]["id"]); // 1
+
+        console.log("-------------------------------")
+
+        for(var i = 0; i < arr.length; i++) {
+            console.log(arr[i].id, arr[i].title, arr[i].regdate);
+        }
+
+        console.log("-------------------------------")
+
+        // 2nd 객체 선언 방법 - function을 사용함
+        // this키워드로 변수를 나타내면, 객체 생성 시 변수가 됨
+        function Student(age) {
+            this.name = "홍길동";
+            this.age = age;
+
+            this.getInfo = function(age) {
+                return this.age;
+            }
+
+            this.setInfo = function(age) {
+                this.age = age;
+            }
+        }
+
+        // var s = new Student();
+        var s = new Student(20); 
+
+        s.setInfo(30);
+        console.log(s.getInfo());
+
+
+        
+
+
+    </script>
+    
+</body>
+</html>

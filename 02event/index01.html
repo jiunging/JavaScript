@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>인라인이벤트 - 태그에 직접 이벤트를 걸어주는 방법</h3>
+    
+
+    <!-- <button type="button" onclick="
+        var a = 1;
+        var b = '홍길동';
+        console.log(a+b);
+        alert(a+b);
+        ">버튼</button> -->
+
+    <button type="button" onclick="check()">눌러봥</button>
+    <button type="button" onclick="call()">this란?</button>
+
+    <button type="button" onclick="call(this)" >this란?</button>
+
+
+    
+    <script>
+        function check() {
+            alert("엄준식");
+        }
+
+        // this - 태그에서 this는 자기 자신을 나타낸다.
+        function call(btn) {
+            btn.innerHTML = "짠!!!";
+        }
+
+    </script>
+
+
+</body>
+</html>

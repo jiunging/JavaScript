@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>표준이벤트 - addEventListener</h3>
+
+    <button type="button" id="btn">얍!</button>
+
+    <script>
+        var btn = document.getElementById("btn");
+
+        // addEventListener만 동일한 종류 이벤트를 여러개 걸 수 있다.
+        // on이 제외된 이벤트 종류, 실행시킬 함수
+        btn.addEventListener('click', function() {
+            alert("바보");
+        })
+
+        btn.addEventListener('click', function() {
+            alert("두 번째로 실행됨")
+        })
+
+        // btn.addEventListener('clock', () => alert("바보"));
+
+    </script>
+    
+</body>
+</html>

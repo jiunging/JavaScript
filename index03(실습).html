@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    ID: <input type="text" id="input">
+    기억하기: <input type="checkbox" id="check">
+    <button type="button" id="btn">확인</button>
+
+    <script>
+        var um = document.getElementById("input");
+        var um1 = document.getElementById("check");
+        var um2 = document.getElementById("btn");
+
+        um1.addEventListener("change", function() {
+                if(um1.checked) {
+                    um1.value="true"
+                } else {
+                    um1.value="false";
+                }
+            })
+
+        um2.onclick = function() {
+            alert("사용자가 입력한 값: " + um.value + ", id기억하기여부: " + um1.value );
+        }
+
+        // 아몰랑
+    </script>
+
+    <hr>
+
+
+    <select id="box" onchange="language()">
+        <option value="korean">한국어</option>
+        <option value="japanese">日本語</option>
+        <option value="english">ENGLISH</option>
+    </select>
+
+    
+    <script>
+        function language() {
+            var language = document.getElementById("language")
+            if(selectedValue === korean) {
+                
+            }
+        }
+    </script>
+
+    
+
+    
+</body>
+</html>

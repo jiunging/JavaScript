@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h3>태그의 속성값의 확인, innerHTML</h3>
+
+    <button id="btn">클릭!</button>
+
+    <input type="text" id=age>
+    <div id="msg"></div>
+    
+
+    <script>
+        // 버튼을 클릭하면, 사용자가 입력한 값을 msg에 넣는다.
+        var btn = document.getElementById("btn");
+        var input = document.getElementById("age");
+        var msg = document.getElementById("msg");
+        btn.onclick = function() {
+            msg.innerHTML = input.value; // msg에 값을 넣는다.
+            input.value = ""; // 사용자가 입력한 값을 비운다
+        }
+    </script>
+
+    <hr>
+
+    <h3>버튼이 가지고 있는 id를 버튼의 사이에 넣는다</h3>
+    <button type="button" id="1" onclick="check(this)">버튼1</button>
+    <button type="button" id="2" onclick="check(this)">버튼2</button>
+    <button type="button" id="3" onclick="check(this)">버튼3</button>
+    <button type="button" id="4" onclick="check(this)">버튼4</button>
+
+    <script>
+        // 나중에 더 멋진 방법으로 해결이 가능함
+        function check(btn) {
+            btn.innerHTML = btn.id;
+        }
+
+    </script>
+
+
+</body>
+</html>
