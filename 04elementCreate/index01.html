@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="content">
+
+    </div>
+
+    <div id="inner">
+
+    </div>
+
+    <ul id="wrap">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <button type=button id="btn1">버튼1</button>
+    <button type=button id="btn2">버튼2</button>
+    <button type=button id="btn3">버튼3</button>
+
+
+
+    <script>
+        var btn1 = document.getElementById("btn1");
+        var content = document.getElementById("content");
+        var lis = document.querySelectorAll("#wrap > li"); // 배열
+
+        btn1.onclick = function () {
+            content.innerHTML = "<input type='checkbox' name='inter'>체크박스생성";
+        
+            // 반대로 반환도 됨
+            var x = content.innerHTML; 
+            console.log(x);
+        
+        }
+
+        btn2.onclick = function() {
+
+            for(var i = 0; i < lis.length; i++) {
+                lis[i].innerHTML = "<b><a href='#'>hello world</a></b>"
+            }
+            
+        }
+    
+
+    </script>
+
+    
+</body>
+</html>

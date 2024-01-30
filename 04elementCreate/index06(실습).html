@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        button {display: inline;}
+        /* li {display: inline;} */
+    </style>
+</head>
+<body>
+
+    <h3>할일 목록 만들기</h3>
+
+    <div class="wrap">
+        <div class="um">
+            <input type="text" class="name1" placeholder="이름을 입력하세요">
+            <button type="button" id="btn1">확인</button>
+        </div>
+
+        <div class="um2">
+            <input type="text" class="todo1" placeholder="당신의 할일을 적으세요">
+            <button type="button" id="btn2">확인</button>
+            
+            <div class="um3">
+                <button type="button" id="del">전체삭제하기</button>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    
+    <script>
+        var btn1 = document.getElementById("btn1"); // 이름쪽 버튼
+        var btn2 = document.getElementById("btn2"); // 할일쪽 버튼
+        var del = document.getElementById("del");
+
+        btn1.onclick = function() {
+            var name = document.querySelector(".name1"); // 이름 입력한 값
+            var um = document.querySelector(".um"); // name쪽 wrap
+            um.innerHTML = name.value + "님 안녕하세요";
+        }
+
+        btn2.onclick = function() {
+            var um2 = document.querySelector(".um2"); // um2쪽 wrap
+            var todo = document.querySelector(".todo1"); // 할일 입력한 값
+            var text = todo.value;
+            var li = document.createElement("li");
+
+            var btn3 = document.createElement("button");
+
+            var text2 = document.createTextNode(text); // 여기다가 버튼 넣어볼까
+            
+            li.appendChild(text2);
+            um2.appendChild(li);
+
+            li.appendChild(btn3);
+            btn3.innerHTML = "X";
+            todo.value = ""; // 값 초기화하기
+
+            btn3.onclick = function() {
+                li.remove();
+                btn3.remove();
+            }
+
+            del.onclick = function() {
+                var lis = document.querySelectorAll(".um2 li");
+
+                for(var i = 0; i < lis.length; i++) {
+                    lis[i].remove();
+                }
+            
+
+            }
+
+
+
+        }
+
+
+
+    </script>
+
+</body>
+</html>
