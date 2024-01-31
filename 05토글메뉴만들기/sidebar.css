@@ -2,6 +2,7 @@
 * {list-style: none; margin: 0; padding: 0;}
 .sidenav {
     height: 100%; /* 높이를 전체영역 */
+    /* width: 50%; 일단 추가 - 지엉 */
     position: fixed;
     z-index: 30;
     top: 50px;
@@ -10,7 +11,11 @@
     overflow: hidden; 
     transition: 0.5s ease-in-out; /* 넓이가 서서히 보이도록 transition */
     padding-top: 50px;
+    margin-left: -100%;
+    /* display: none; 일단 안 보이게 했음 - 지엉 */
+    
 }
+/* 메뉴태그들 */
 .sidenav a {
     padding: 8px 30px;
     text-decoration: none;
@@ -19,6 +24,7 @@
     display: block;
     width: 200px; /*글씨고정 */
     box-sizing: border-box;
+    transition: 0.3s;
 }
 .sidenav a:hover {
     color: #f1f1f1;
@@ -26,7 +32,7 @@
 }
 /* 메뉴버튼을 포지션으로 처리하기 */
 .menuBtn {
-    position: fixed; 
+    position: fixed;
     width: 50px; 
     height: 50px; 
     line-height: 50px; 
