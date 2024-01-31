@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .wrap img {
+            width: 300px;
+        }
+        .wrap2 img {
+            width: 700px;
+            background-image: url(img/1.jpg);
+            
+        }
+    </style>
+</head>
+<body>
+
+    <h2>다중이벤트 처리</h2>
+
+    <div>
+        <div class="wrap">
+            <img src="img/1.jpg" alt="">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+            <img src="img/4.jpg" alt="">
+        </div>
+
+    </div>
+
+    <br>
+    <h3>결과:</h3>
+    <div class="wrap2">
+        <!-- <img src="img/1.jpg" alt=""> -->
+    </div>
+    
+
+    <script>
+        var wrap = document.querySelector(".wrap");
+        var wrap2 = document.querySelector(".wrap2");
+        var img = document.createElement('img');
+
+        wrap.onclick = function(e) {
+
+            // img일때만 실행시킨다
+            if(e.target.tagName === 'IMG') {
+                wrap2.innerHTML = '';
+                img.src = e.target.src;
+                wrap2.appendChild(img);
+            }
+
+            // if (e.target.tagName === 'IMG') {
+            //     // 클릭된 이미지의 src 속성을 가져와서 wrap2의 innerHTML로 설정
+            //     wrap2.innerHTML = '';
+            //     var clickedImage = document.createElement('img');
+            //     clickedImage.src = e.target.src;
+            //     wrap2.appendChild(clickedImage);
+            // }
+
+        }
+
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>버튼을 눌러서 변경하는게 아니라, 클릭하는 즉시 해당태그에 반영하려면?</h3>
+
+    <ul class="box">
+        <li>1. 홍길동</li>
+        <li>2. 이순신</li>
+        <li>3. 김길자</li>
+        <li>4. 홍순자</li>
+        <li>5. 홍길순</li>
+    </ul>
+
+    <script>
+        // li를 얻어야함
+        var lis = document.querySelectorAll(".box li");
+
+
+        // 이 방법은 초보가 하는거
+        for(var i = 0; i < lis.length; i++) {
+            lis[i].onclick = function() {
+                this.style.backgroundColor = "red";
+            }
+        }
+
+
+    </script>
+    
+</body>
+</html>

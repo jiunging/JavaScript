@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {border-spacing: 0; border-collapse: collapse;}
+        th, td, tr {border: 1px solid black; text-align: center;}
+    </style>
+</head>
+<body>
+
+    <h2>엄</h2>
+
+    <table class="table">
+        <tr>
+            <td>번호</td>
+            <td>제목</td>
+            <td>내용</td>
+            <td>삭제</td>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>첫글</td>
+            <td>hi</td>
+            <td><button type="button">삭제</button></td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>첫글</td>
+            <td>hi</td>
+            <td><button type="button">삭제</button></td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>첫글</td>
+            <td>hi</td>
+            <td><button type="button">삭제</button></td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>제목</td>
+            <td>hi</td>
+            <td><button type="button">삭제</button></td>
+        </tr>
+    </table>
+
+    <script>
+        var table = document.querySelector(".table");
+
+        table.onclick = function(e) {
+            var row = e.target.parentNode;
+            if(e.target.tagName === 'BUTTON') {
+                row.parentNode.remove(row);
+            }
+        }
+
+
+    </script>
+
+    
+</body>
+</html>
