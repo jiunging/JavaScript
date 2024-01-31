@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>
+        토글버튼 - 하나의 버튼으로 2개 이상의 기능을 수행하는 버튼
+        클래스의 속성이 있냐 or 없냐를 사용해서 제어
+        토글탭 -
+    </h3>
+
+    <button type="button" class="btn btn-default" id="btn">토글버튼</button>
+
+    <script>
+        var btn = document.getElementById("btn");
+        btn.onclick = function() {
+            // 태그에 class에 접근할 때는 className, classList 속성을 사용함
+            // console.log(btn.class); 
+            
+            // 문자열의 형태로 전체이름을 얻음, btn-btn-default
+            // console.log(btn.className); 
+
+            // 배열의 형태로 클래스명을 얻음, 배열로 이것저것 나옴
+            // console.log(btn.classList);
+            
+            // length는 2
+            // console.log(btn.classList.length);
+            // btn-btn-default
+            // console.log(btn.classList.value);
+
+            // btn.classList.add("active"); // active를 추가한다.
+            // btn.classList.remove("btn");
+
+            if(btn.classList.contains("btn")) { // 포함되어있으면 true, 없으면 false
+                console.log("btn이 포함됨")
+            } else {
+                console.log("btn이 없음")
+            }
+
+            btn.classList.toggle("active"); // 있으면 지우고, 없으면 추가함
+        }
+    </script>
+
+    <hr>
+
+    <button type="button" id="myBtn">토글활용하기</button>
+
+    <div class="box">
+        디자인을 변경할 박스
+    </div>
+
+    <script>
+        // 버튼에 class속성이 있으면 box디자인을 변경
+        var box = document.querySelector(".box");
+        var myBtn = document.getElementById("myBtn");
+        myBtn.onclick = function() {
+
+            if(myBtn.classList.contains("active")) { // active가 있다면
+                box.style.backgroundColor = "transparent"; // 투명
+                myBtn.classList.toggle("active");
+            } else {
+                box.style.backgroundColor = "yellow";
+                myBtn.classList.toggle("active");
+            }
+        }
+
+    </script>
+
+    <hr>
+
+
+    <style>
+        .list.active {
+            background-color: yellow;
+        }
+    </style>
+
+    <button type="button" id="yourBtn">토글활용하기</button>
+
+    <div class="list ">
+        박스
+    </div>
+
+    <script>
+        var list = document.querySelector(".list");
+        var yourBtn = document.getElementById("yourBtn");
+        
+        yourBtn.onclick = function() {
+            list.classList.toggle("active");
+        }
+
+    </script>
+    
+</body>
+</html>

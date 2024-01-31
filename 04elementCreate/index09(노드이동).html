@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {border-spacing: 0; border-collapse: collapse;}
+        thead th, tbody td {
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>이동</th>
+                <th>번호</th>
+                <th>이름</th>
+                <th>내용</th>
+                <th>날짜</th>
+            </tr>
+
+        </thead>
+
+        <tbody class="table">
+        <tr>
+            <td><button onclick="down(this)">↓</button><button onclick="up(this)">↑</button></td>
+            <td>1</td>
+            <td>홍길자</td>
+            <td>안녕!</td>
+            <td>2019-01-01</td>
+        </tr>
+        <tr>
+            <td><button onclick="down(this)">↓</button><button onclick="up(this)">↑</button></td>
+            <td>2</td>
+            <td>이순신</td>
+            <td>반가워</td>
+            <td>2019-02-01</td>
+        </tr>
+        <tr>
+            <td><button onclick="down(this)">↓</button><button onclick="up(this)">↑</button></td>
+            <td>3</td>
+            <td>이순신</td>
+            <td>반가워</td>
+            <td>2019-02-01</td>
+        </tr>
+        <tr>
+            <td><button onclick="down(this)">↓</button><button onclick="up(this)">↑</button></td>
+            <td>4</td>
+            <td>이순신</td>
+            <td>반가워</td>
+            <td>2019-02-01</td>
+        </tr>
+        <tr>
+            <td><button onclick="down(this)">↓</button><button onclick="up(this)">↑</button></td>
+            <td>5</td>
+            <td>이순신</td>
+            <td>반가워</td>
+            <td>2019-02-01</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function down(btn) {
+            var table = document.querySelector(".table");
+            var current = btn.parentElement.parentElement; // 현재 행, btn은 this로 내가 누군지 받아옴
+            var next = current.nextElementSibling; // 형제한테 감, 그니까 버튼 기준으로 2번 올라가서 형제한테 가는거임
+
+            if(next == null) {
+                alert("마지막 행입니다");
+                return;
+            }
+
+            // 부모.insertBefore(삽입할 노드, 기준 노드)
+            table.insertBefore(next, current);
+        }
+
+        function up(btn) {
+            var table = document.querySelector(".table");
+            var current = btn.parentElement.parentElement; // tr로 가기 위한 것
+            var prev = current.previousElementSibling;
+
+            if(prev == null) {
+                alert("첫 번째 행입니다");
+                return;
+            }
+
+            table.insertBefore(current, prev);
+
+        }
+
+    </script>
+
+
+</body>
+</html>
