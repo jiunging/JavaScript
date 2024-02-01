@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>이벤트 위임 방식 - 부모에 이벤트를 걸면, 자식이 이벤트를 물려받을 수 있음</h3>
+
+    <ul class="box">
+        <li>1. 홍길동</li>
+        <li>2. 이순신</li>
+        <li>3. 김길자</li>
+        <li>4. 홍순자</li>
+        <li>5. 홍길순</li>
+    </ul>
+
+    <script>
+        var box = document.querySelector(".box");
+        box.onclick = function(e) {
+            // this.style.backgroundColor = "red"; // 여기서 this는 ul을 나타나기 때문에 옳지 않음
+
+            // console.log(event); // 이벤트가 동작할 때, 자동으로 event객체 이벤트정보를 넣어준다
+
+            // console.log(event.target); //  실제 이벤트가 동작한 태그(li가 나옴)
+            // console.log(event.currentTarget); // 실제 이벤트가 걸려있는 태그
+            // console.dir(event.target) // dir에 태그 넣어주면, 사용할 수 있는 속성을 볼 수 있다.
+
+            // tagname은 다 대문자
+            if(e.target.tagName != "LI") return;
+            // 이벤트가 동작한 태그가 UL이면 실행 안 하면 됨
+            e.target.style.backgroundColor = "red";
+
+
+        }
+    </script>
+    
+</body>
+</html>
