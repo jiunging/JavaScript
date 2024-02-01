@@ -55,9 +55,9 @@
         var table = document.querySelector(".table");
 
         table.onclick = function(e) {
-            var row = e.target.parentNode;
+            var row = e.target.parentElement;
             if(e.target.tagName === 'BUTTON') {
-                row.parentNode.remove(row);
+                row.parentElement.remove(row);
             }
         }
 

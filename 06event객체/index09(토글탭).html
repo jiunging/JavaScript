@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 메뉴1, 2, 3 */
+        .toggle li {    
+            display: inline-block;
+            padding: 15px 20px 14px;
+            width: 25%; 
+            text-align: center;
+            border: 1px solid #333;
+            cursor: pointer;
+        }
+
+        .toggle-menu {display: none;}
+        .active { display: block; animation: fadeIn 0.5s ease-in-out}
+
+        /* 애니메이션임 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                margin-left: -100px;
+            } to {
+                opacity: 1;
+                margin-left: 0;
+            }
+        }
+        
+
+    </style>
+
+</head>
+<body>
+    <!--
+    태그의 data-xx는 태그에 필요한 중요한 데이터를 저장하는 곳
+    data- 로 시작하고 이름을 지어 사용합니다.
+    -->
+    <section>
+		<ul class="toggle">
+			<li data-id="#toggle1">메뉴1</li>
+			<li data-id="#toggle2">메뉴2</li>
+			<li data-id="#toggle3">메뉴3</li>
+		</ul>
+
+		<div class="um">
+			<div class="toggle-menu active" id="toggle1">
+				토글메뉴1
+			</div>
+			<div class="toggle-menu" id="toggle2">
+				토글메뉴2
+			</div>
+			<div class="toggle-menu" id="toggle3">
+				토글메뉴3
+			</div>
+		</div>
+
+    </section>
+
+    <script>
+        // 1. ul에 이벤트 위임을 이용해서 클릭이벤트를 걸고 대상의 data-id를 얻음
+        // 2. 다른 대상의 toggle-menu의 active 속성을 삭제
+        // 3. data-id의 값에 알맞는 태그에 active를 추가하면 됨
+        var toggle = document.querySelector(".toggle");
+        var menus = document.querySelectorAll(".toggle-menu");
+
+
+
+        toggle.onclick = function(e) {
+
+            if(e.target.tagName != "LI") return; // LI가 아니라면 종료
+
+            var dataId = e.target.dataset.id; // dataset 얻음(#toggle)
+
+            var target = document.querySelector(dataId);
+
+            for(var i = 0; i < menus.length; i++) {
+                menus[i].classList.remove("active");
+            }
+
+            target.classList.add("active");
+        }
+
+        
+    </script>
+    
+
+
+</body>
+</html>

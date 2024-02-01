@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .x {display: flex;}
+        .canvas {width: 300px; height: 300px; border: 1px solid #777;}
+        .box {width: 100px; height: 100px; border: 1px solid #777;}
+        .container {width: 300px; height: 300px; border: 1px solid #777; overflow: auto;}
+    </style>
+</head>
+<body>
+
+    <h3>마우스로 태그를 옮기는데 drag이벤트를 사용할 수 있다(dragable속성을 true로)</h3>
+
+    <div class="x">
+        <div class="canvas"> 
+            <div class="box" draggable="true">드래그할박스</div>
+        </div>
+
+        <div class="container">
+            옮겨다 놓을 박스
+        </div>
+    </div>
+
+    <script>
+        // dragstart
+        // 1. 사용자가 객체(object)를 드래그하려고 시작할 때 발생함.
+        
+        // drag
+        // 2. 대상 객체를 드래그하면서 마우스를 움직일 때 발생함.
+        
+        // dragenter
+        // 3. 마우스가 대상 객체의 위로 처음 진입할 때 발생함.
+       
+        // dragover
+        // 4. 드래그하면서 마우스가 대상 객체의 영역 위에 자리 잡고 있을 때 발생함.
+        
+        // drop
+        // 5. 드래그가 끝나서 드래그하던 객체를 놓는 장소에 위치한 객체에서 발생함. 리스너는 드래그된 데이터를 가져와서 드롭 위치에 놓는 역할을 함
+        
+        // dragleave
+        // 6. 드래그가 끝나서 마우스가 대상 객체의 위에서 벗어날 때 발생함.
+        
+        // dragend
+        // 7. 대상 객체를 드래그하다가 마우스 버튼을 놓는 순간 발생함.
+        
+
+        var box = document.querySelector(".box");
+
+        var clone = null;
+        
+        // 드래그할 박스에 거는 이벤트
+        box.addEventListener("dragstart", function() {
+            console.log("사용자가 객체(object)를 드래그하려고 시작할 때 발생함");
+        
+            clone = box.cloneNode(true); // 드래그가 시작될 때 박스를 복제함
+            
+        })
+
+        // box.addEventListener("drag", function() {
+        //     console.log("대상 객체를 드래그하면서 마우스를 움직일 때 발생한다.")
+        // })
+
+        // box.addEventListener("dragend", function() {
+        //     console.log("대상 객체를 드래그하다가 마우스 버튼을 놓는 순간 발생함")
+        // })
+        
+
+        /////////////////////////////////////////////////////
+        // 드래그해서 전달할 목표박스
+        var container = document.querySelector(".container");
+
+        container.addEventListener("dragenter", function() {
+            console.log("마우스가 대상 객체의 위로 처음 진입할 때 발생함");
+            // container.style.backgroundColor = "green";
+        })
+
+        container.addEventListener("dragover", function() {
+            event.preventDefault(); // 브라우저는 파일을 자동으로 open하는 기본이벤트가 있음. 그 기본이벤트를 막음
+            console.log("드래그하면서 마우스가 대상 객체의 영역 위에 자리잡고 있을 때 발생함");
+            // container.style.backgroundColor = "green";
+        })
+
+        // container.addEventListener("dragleave", function() {
+        //     console.log("드래그가 끝나서 마우스가 대상 객체의 위에서 벗어날 때 발생함");
+        //     // container.style.backgroundColor = "green";
+        // })
+
+        container.addEventListener("drop", function() {
+            event.preventDefault(); // 브라우저는 파일을 자동으로 open하는 기본이벤트가 있음. 그 기본이벤트를 막음
+            // console.log("드래그가 끝나서 드래그하던 객체를 놓는 장소에 위치한 객체에서 발생함, 리스너는 드래그된 데이터를 가져와서 드롭 위치에 놓음");
+
+            // 박스를 옮긴다
+            // container.appendChild(box);
+
+            // 박스를 복제
+            container.appendChild(clone);
+
+        })
+
+    
+    
+    </script>
+    
+</body>
+</html>

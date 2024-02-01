@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .func1 {width: 300px; height: 300px; background-color: red;}
+        .func2 {width: 200px; height: 200px; background-color: yellow;}
+        .func3 {width: 100px; height: 100px; background-color: green;}
+    </style>
+</head>
+<body>
+
+    <div class="func1">부모
+        <div class="func2">중간
+            <div class="func3">
+                자식
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 이벤트 버블링 -> 부모, 자식에 이벤트가 걸려있을 때, 자식 -> 부모로 이벤트가 전파되는 특성
+        // 이벤트가 실행되는 순서: 자식 -> 자식 -> 중간 -> 부모 순으로 실행됨
+        // 그래서 부모에 이벤트를 걸면, 자식에서 눌러도 실행된다.
+        var func1 = document.querySelector(".func1");
+        var func2 = document.querySelector(".func2");
+        var func3 = document.querySelector(".func3");
+
+        // func1.onclick = function() {
+        //     alert("func1번 부모");
+        // }
+
+        // func2.onclick = function() {
+        //     event.stopPropagation(); // 더이상 이벤트 전파를 막는다(버블링 중단)
+        //     alert("func2번 중간");
+        // }
+
+        // func3.onclick = function() {
+        //     alert("func3번 자식");
+        // }
+
+        // 이벤트 캡쳐링 -> 부모, 자식에 이벤트가 걸려있을 때, 부모 -> 자식으로 이벤트가 전파되는 특성
+        // 실제 만들어보면 좀 이상하다는 것을 알거임
+        // 캡쳐링은 이벤트 리스너로만 만들 수 있음
+        func1.addEventListener("click", function() {
+            alert("func1번 부모");
+        }, true) // 캡쳐링
+        
+        func2.addEventListener("click", function() {
+            alert("func2번 중간");
+        }, true) // 캡쳐링
+        
+        func3.addEventListener("click", function() {
+            alert("func3번 자식");
+        }, true) // 캡쳐링
+
+        // 보통 캡쳐링을 구현할 일은 거의 없음, 그냥 버블링을 쓰면 된다.
+        
+        
+
+    </script>
+    
+</body>
+</html>

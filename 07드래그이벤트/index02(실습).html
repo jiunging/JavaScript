@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul, li {list-style: none; padding: 0; margin: 0;}
+        .wrap {display: flex; flex-direction: column; justify-content: center; align-items: center;}
+        
+        .list {display: flex; width: 900px; flex-flow: row wrap; justify-content: space-around;}
+        .list li {border: 1px solid #777; width: 180px; height: 280px; padding: 10px; margin-top: 10px;}
+        .img{width: 100%; height: 100%;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h3>엄준식은 살아있다</h3>
+        
+        <ul class="list">
+            <li class="box">
+                <img src="엄.jpg" alt="사진" class="img" draggable="true">
+            </li>
+            <li class="box"></li>
+            <li class="box"></li>
+            <li class="box"></li>
+            <li class="box"></li>
+            <li class="box"></li>
+            <li class="box"></li>
+            <li class="box"></li>
+        </ul>
+    </div>
+
+    <script>
+        var list = document.querySelector(".list");
+        var img = document.querySelector(".img");
+
+        var clone = null;
+
+        // 드래그할 박스
+        list.addEventListener("dragstart", function() {
+            console.log("이동 시작~");
+            // clone = box.cloneNode(true); // 드래그 시작할 때, 박스 복제
+        })
+        
+
+        // 드래그해서 전달받는 박스
+        // var boxes = document.querySelector(".box");
+
+        list.addEventListener("dragenter", function(event) {
+            console.log("받을 박스에 위치했음");
+        })
+        
+        list.addEventListener("dragover", function(event) {
+            event.preventDefault();
+            console.log("받을 박스에서 움직이는 중~");
+        })
+
+        list.addEventListener("drop", function(event) {
+            
+            event.preventDefault();
+            var box = event.target;
+
+            console.log(event.parentNode);
+
+            if(box.tagName != "LI") return;
+            
+
+            box.appendChild(img);
+        })
+
+
+
+
+    </script>
+    
+</body>
+</html>

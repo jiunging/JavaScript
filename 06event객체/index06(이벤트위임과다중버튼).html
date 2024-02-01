@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul class="list">
+        <li>
+            <p>엄준식</p>
+            <button type="button" class="btn sel">선택</button>
+            <button type="button" class="btn del">삭제</button>
+        </li>
+
+        <li>
+            <p>엄길동</p>
+            <button type="button" class="btn sel">선택</button>
+            <button type="button" class="btn del">삭제</button>
+        </li>
+
+        <li>
+            <p>엄홍자</p>
+            <button type="button" class="btn sel">선택</button>
+            <button type="button" class="btn del">삭제</button>
+        </li>
+
+        <li>
+            <p>엄순철</p>
+            <button type="button" class="btn sel">선택</button>
+            <button type="button" class="btn del">삭제</button>
+        </li>
+
+        <li>
+            <p>엄엄엄</p>
+            <button type="button" class="btn sel">선택</button>
+            <button type="button" class="btn del">삭제</button>
+        </li>
+    </ul>
+
+    <script>
+        var list = document.querySelector(".list");
+        
+        list.onclick = function(e) {
+            if(e.target.tagName != "BUTTON") return; // button 아니면 중단
+
+            // 버튼별로 구문을 할 수 있다.
+            if(e.target.classList.contains("sel"))  { // sel클래스가 들어있으면
+                e.target.parentElement.style.backgroundColor = "red";
+            } else if(e.target.classList.contains("del")) { // del클래스가 들어있으면
+                e.target.parentElement.remove();
+            }
+        }
+    </script>
+
+    
+</body>
+</html>
