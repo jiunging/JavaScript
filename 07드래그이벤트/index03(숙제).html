@@ -6,24 +6,122 @@
     <title>Document</title>
 
     <style>
+        ul, li, div {list-style: none; padding: 0; margin: 0;}
+
+        .wrap > h2,h3 {margin-left: 30px}
+
         .wrap {
-            border: 1px solid #777;
-            width: 1000px;
+            overflow: hidden;
+            /* border: 1px solid #777; */
+            width: 95%;
             height: 1000px;
+            margin: 30px 30px 30px 30px;
+        } 
+
+        /* 부모 */
+        .wrap .boxes {
+            float: left;
+            width: 1200px;
+            height: 700px;
+            margin-left: 30px;
+        }
+        
+        /* 왼쪽 박스들 */
+        .wrap .boxes > li {
+            display: inline-block;
+            width: 25%;
+            box-sizing: border-box;
+            height: 50%;
+            /* margin-top: 10px;
+            margin-right: 10px; */
+            border: 1px solid #777;
+            float: left;
             
         }
+
+
+        .wrap .rightbox > li {
+            display: inline-block;
+        }
+
+        /* 오른쪽 박스 */
+        .wrap .rightbox {
+            float: right;
+            width: 500px;
+            height: 700px;
+            text-align: left;
+            border: 1px solid #777;
+            margin-right: 30px;
+        }
+
+
     </style>
 </head>
 <body>
 
-    <section>
+    <div class="wrap">
         <h2>드랍아이템 만들기</h2> <br>
         <h3>1. li는 이벤트위임 방법을 사용하여 처리하면 만점입니다! </h3>
-        <div class="wrap">
-            
+
+        <div class="boxes">
+            <li class="box" draggable="true">아이템1</li>
+            <li class="box" draggable="true">아이템2</li>
+            <li class="box" draggable="true">아이템3</li>
+            <li class="box" draggable="true">아이템4</li>
+            <li class="box" draggable="true">아이템5</li>
+            <li class="box" draggable="true">아이템6</li>
+            <li class="box" draggable="true">아이템7</li>
+            <li class="box" draggable="true">아이템8</li>
         </div>
 
-    </section>
+        <ul class="rightbox">
+            <li class="box">여기에 메뉴를 던지세요</li>
+        </ul>
+    </div>
+
+    <script>
+        var wrap = document.querySelector(".wrap");
+        var boxes = document.querySelector(".boxes");
+        var box = document.querySelector(".box");
+        
+        
+        var clone = null;
+
+        // 드래그할 박스
+        wrap.addEventListener("dragstart", function(event) {
+            console.log("이동 시작~");
+            clone = event.target.cloneNode(true); // 드래그가 시작될 때 박스를 복제함
+            // clone = box.cloneNode(true); // 드래그가 시작될 때 박스를 복제함
+        })
+
+        wrap.addEventListener("dragover", function(event) {
+            event.preventDefault();
+        })
+
+        wrap.addEventListener("drop", function(event) {
+            event.preventDefault();
+
+            var box1 = event.target;
+            console.log(box1);
+            console.dir(box1);
+            
+            console.log(box1.tagName);
+
+            if(box1.tagName != "UL") return;
+
+            box1.appendChild(clone);
+
+
+
+        })
+
+
+
+
+    </script>
+
+
+
     
 </body>
 </html>
