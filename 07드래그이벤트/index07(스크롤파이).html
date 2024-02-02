@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        * {padding: 0; margin: 0;}
+        .box1{height: 1000px; background-color: red;}
+        .box2{height: 1000px; background-color: green;}
+        .box3{height: 1000px; background-color: blue;}
+
+        header {
+            top: 0;
+            left: 0;
+            text-align: center;
+            position: fixed;
+            background-color: #fff;
+            width: 100%;
+        }
+
+        section {
+            margin-top: 90px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h3>스크롤파이</h3>
+        <ul>
+            <li><a class="bt1">이동1</a></li>
+            <li><a class="bt2">이동2</a></li>
+            <li><a class="bt3">이동3</a></li>
+        </ul>
+    </header>
+
+    <section>
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+    </section>
+
+    <script>
+        var bt1 = document.querySelector(".bt1");
+        var bt2 = document.querySelector(".bt2");
+        var bt3 = document.querySelector(".bt3");
+
+        var box1 = document.querySelector(".box1");
+        var box2 = document.querySelector(".box2");
+        var box3 = document.querySelector(".box3");
+
+        // 객체의 시작위치는 offsetTop, offsetLeft
+        console.log(box1.offsetTop, box1.offsetLeft);
+        console.log(box2.offsetTop, box2.offsetLeft);
+        console.log(box3.offsetTop, box3.offsetLeft);
+
+        bt3.onclick = function() {
+            // 화면의 스크롤 위치로 이동
+            // window.scrollTo(box3.offsetLeft, box3.offsetTop) // 브라우저 오브젝트
+            window.scrollTo({top: box3.offsetTop,
+                             left: box3.offsetLeft,
+                             behavior: "smooth" 
+                            });
+        }
+
+        bt2.onclick = function() {
+            window.scrollTo({top: box2.offsetTop,
+                             left: box2.offsetLeft,
+                             behavior: "smooth" 
+                            });
+        }
+
+        bt1.onclick = function() {
+            window.scrollTo({top: box1.offsetTop,
+                             left: box1.offsetLeft,
+                             behavior: "smooth" 
+                            });
+        }
+
+
+    </script>
+    
+</body>
+</html>

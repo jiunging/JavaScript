@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        section {height: 1000px;}
+        .canvas {border: 1px solid #000; width: 500px; height: 500px;}
+        .box {background-color: red; width: 50px; height: 50px;}
+          /* 박스를 옮기기 위한 중요한 디자인 */
+          .canvas {position: relative;}
+          .box {position: absolute; left: 0; top: 0;}
+    </style>
+
+</head>
+<body>
+    
+    <h3>마우스이벤트 활용한 박스 옮기기</h3>
+    <section>
+        <div class="canvas">
+            <div class="box">box</div>
+        </div>
+    </section>
+
+    <script>
+
+        /*
+        1. screenX, screenY
+        사용자 모니터 화면을 기준으로 한 좌표를 표시합니다.
+        사용자 모니터의 왼쪽 상단 모서리가 (0, 0)이 됩니다.
+        2. pageX, pageY
+        전체 문서를 기준으로 한 좌표를 표시합니다.
+        위 그림과 같이, 만약 문서를 표현할 때 스크롤이 생긴다면,
+        특정 지점의 pageY 좌표값은 페이지가 스크롤 될때마다 변경 될 것입니다.
+        3. clientX, clientY
+        브라우저에서 사용자에게 웹페이지가 보여지는 영역을 기준으로 좌표를 표시합니다.
+        따라서, 스크롤바가 움직이더라도, 특정 지점의 clientX, clientY의 값은 동일합니다.
+        4. offsetX, offsetY
+        좌표를 출력하도록 하는 이벤트가 걸려있는 DOM node를 기준으로 좌표를 표시합니다.
+        위 그림과 같이, 
+        만약 특정 div 영역에서 offsetX, offsetY를 출력한다면,
+        div의 왼쪽 상단 모서리 부분의 offsetX, offsetY의 값은 (0, 0)일 것입니다.
+        */
+
+        var canvas = document.querySelector(".canvas");
+        var box = document.querySelector(".box");
+
+        var drag = false;
+        var dev = {x: 0, y: 0}; // box의 클릭한 위치를 보정할 변수
+        var canvasDev = {x: canvas.offsetLeft, y : canvas.offsetTop} // canvas 위치값을 보정할 변수
+
+        console.dir(canvas);
+
+        document.onmousemove = function () {
+
+            // console.log(event);
+
+            // box.style.top = "50px";
+            // box.style.left = "50px";
+
+            // console.log(event.screenX);
+            // console.log(event.screenY);
+            
+            // console.log("페이지x", event.pageX);
+            // console.log("페이지y", event.pageY);
+
+            // console.log("클라이언트x", event.clientX);
+            // console.log("클라이언트y", event.clientY);
+
+            // console.log("오프셋x", event.offsetX);
+            // console.log("오프셋y", event.offsetY);
+
+            // 마우스를 움직일 때, 깜빡이는 현상이 있는데, BOX가 이벤트 버블링을 받기 때문에
+            
+            // 기존 상자 깜빡이는거 없애기, 근데 나중에 5번으로 수정함
+            // if(event.target.className != "canvas") return;
+
+            if(drag == false) return;
+
+            // 첫 번째는 이렇게 설정했는데, 상자를 마우스 커서 중앙에 위치시키고 싶어서 이건 버림
+            // box.style.left = event.offsetX + "px";
+            // box.style.top = event.offsetY + "px";
+
+
+
+            // 3. 상자 위치 보정
+            // 4. 깜빡임 현상(좀 부드럽지 못함), 그 이유는 빨간상자 안에서 마우스 이벤트를 받지 못하기 때문
+            // box.style.left = event.offsetX - dev.x + "px";
+            // box.style.top = event.offsetY - dev.y + "px";
+
+            // 5. 깜빡이는 현상은 이벤트 버블링을 허용하면 됨?
+            // 5. 그다음 상자의 이동을 이벤트기반의 좌표가 아니라 도큐먼트문서의 절대좌표 기준으로 움직이면 됨
+            // 캔버스의 위치좌표를 보정함
+            box.style.left = event.pageX - dev.x - canvasDev.x + "px";
+            box.style.top = event.pageY - dev.y - canvasDev.y + "px";
+
+            // 6. 마우스가 canvas를 벗어나면 마우스 이벤트를 받지 못한다.
+            // 이벤트를 document로 변경하고, 해당 태그일 때만 동작하도록 바꾸면 된다.
+
+
+            
+        }
+
+        // 1. 마우스를 누른 상태에서 움직이도록 처리
+        document.onmousedown = function() {
+
+            // 7. 모든것을 document로 바꿨음, box.onmousedown 등등 -> document.~~
+            if(event.target != box) return;
+
+
+            // console.log("마우스다운동작");
+            drag = true; // 움직일 수 있다는 의미
+
+            // 2. 마우스가 꼭짓점을 따라다니게 되는데, 
+            // console.log(event.offsetX);
+            // console.log(event.offsetY);
+            dev.x = event.offsetX; // x축 설정
+            dev.y = event.offsetY; // y축 설정
+        }
+        
+        document.onmouseup = function() {
+            drag = false; // 다시 움직일 수 없음
+        }
+
+
+
+
+    </script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>document의 자식 > form > input이 지정되기 때문에 document.name.name으로 접근</h3>
+
+    <form name="myForm">
+        이름: <input type="text" name="name">
+        나이: <input type="text" name="age" onkeypress="enter()">
+        <input type="submit" value="전송" id="btn">
+    </form>
+
+    <script>
+        var btn = document.getElementById("btn");
+        btn.addEventListener("click", function(e) {
+            e.preventDefault(); // 고유이벤트 중지
+            validate();
+        })
+
+        function validate() {
+            // input에 접근
+            // console.log(document.myForm);
+            // console.log(document.myForm.name);
+            // console.log(document.myForm.age);
+
+            // js로 인풋의 유효성검사
+            var myForm = document.myForm;
+
+            if(myForm.name.value.length < 3) {
+                alert("이름은 3글자 이상")
+                myForm.name.focus(); // input에 포커스
+                return;
+            } else if(myForm.age.value <= 0) {
+                alert("나이는 0세 이상")
+                myForm.age.focus();
+                return;
+            }
+
+            myForm.submit(); // 폼객체를 서브밋함
+        }
+
+        // 엔터이벤트
+        document.addEventListener("keypress", function() {
+            if(event.target == document.myForm.name) return; // 이벤트가 발생한 위치가 인풋태그였다면 실행시키지 않음
+            if(event.target == document.myForm.age) return;
+
+            if(event.keyCode === 13) { // 인터를 의미
+                validate();
+            }
+
+        })
+
+    </script>
+    
+</body>
+</html>

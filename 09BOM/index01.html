@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button type="button" id="btn">팝업띄우기</button>
+
+    <script>
+        var btn = document.getElementById("btn");
+
+        btn.onclick = function() {
+
+            // window.open("popup.html", "제목~"); // 새로운 창이 만들어짐
+            // window.open("https://www.naver.com", "제목~");
+            // window.open("popup.html", "제목~", "키=값, 키=값")
+            window.open("popup.html", "제목~", "width=300, height=300, left=200, top=200")
+
+            // window.close();
+        }
+
+
+    </script>
+    
+</body>
+</html>

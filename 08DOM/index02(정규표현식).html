@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form name="regForm">
+        비밀번호: <input type="password" name="pw" placeholder="영문자, 숫자, 특수문자 포함 최소 13글자">
+        <input type="submit" value="전송" id="btn">
+    </form>
+
+    <script>
+        var btn = document.getElementById("btn");
+        btn.onclick = function() {
+
+            event.preventDefault(); // 고유이벤트 중단
+
+            var regex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*]).{13,}$/;
+            
+            if(!regex.test(document.regForm.pw.value)) {
+                alert("영문자, 숫자, 특수문자 포함 최소 13글자입니다.");
+                document.regForm.pw.focus();
+                return;
+            }
+        }
+    </script>
+    
+</body>
+</html>
