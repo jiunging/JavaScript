@@ -1,5 +1,13 @@
-li, ul {
+li, ul, p {
     list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    border: 0 none;
+    background-color: transparent;
+    vertical-align: middle;
 }
 
 body {
@@ -36,20 +44,21 @@ body {
 
 .header .header-content .contents {
     width: 980px;
-    height: 300px; 
+    height: 60px; 
     margin: 0 auto;
+    
 }
 
 .header .header-content .contents .contents-left {
     float: left;
-    border: 1px solid #777;
+    /* border: 1px solid #777; */
 }
 
 .header .header-content .contents .contents-right {
     float: right;
     overflow: hidden;
-    border: 1px solid #777;
-    width: 435px;
+    /* border: 1px solid #777; */
+    width: 465px;
 }
 
 /* 오른쪽 박스 */
@@ -69,7 +78,7 @@ body {
 
 
 /* culturePlex부분 */
-.header .header-content .contents span {
+.header .header-content .contents .contents-left > span {
     color: #222;
     font-size: 16px;
     font-weight: 300;
@@ -80,17 +89,18 @@ body {
 }
 
 .header .header-content .contents .memberInfo_wrap {
-    height: 300px; /* 57로 바꿈 */
-    /* overflow: hidden; */
-
+    height: 57px;
 }
 
+
+
+
 /* 여길 수정해야함 */
- .header .header-content .contents .contents-right .memberInfo_wrap li{
-    /* width: 100%; */
-    height: 80px;
-    display: inline-block;
+ .header .header-content .contents .contents-right .memberInfo_wrap ul li{
+    /* height: 80px; */
+    display: inline-block; 
     overflow: hidden;
+    margin-right: 32px;
 }
 
 
@@ -98,15 +108,299 @@ body {
 
 .header .header-content .contents .contents-right .memberInfo_wrap li img{
     width: 36px;
-    height: 36px;
-    float: left;
+    height: 40px;
+    
 }
 
 
 .header .header-content .contents .contents-right .memberInfo_wrap .hyundai{
     width: 136px;
     height: 39px;
-} 
+}
+
+.header .header-content .contents-right .memberInfo_wrap a > span {
+    display: inline;
+    
+}
+
+/* 여기부턴 영화, 극장, 예매 */
+.header > .nav {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.nav .contents {
+    width: 980px;
+    margin: 0 auto;
+}
+
+/* li태그 */
+.nav .contents .nav_menu li {
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 40px;
+    
+}
+
+/* a태그(글씨) */
+.nav .contents .nav_menu li h3 > a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 600;
+    font-size: 17.2px;
+    height: 30px;
+    
+}
+
+/* 검색창 */
+.nav .contents .nav_menu .search {
+    padding: 20px 0 15px 0;
+    float: right;
+    width: 300px;
+}
+
+.nav .contents .nav_menu .search > input {
+    width: 180px;
+    height: auto;
+    padding: 0 0 0 7px;
+    font-size: 16px;
+    color: #222;
+    line-height: 1.500em;
+    border: none;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    margin-left: 28px;
+
+}
+
+.nav .contents .nav_menu .search > .searchBtn {
+    padding: 0;
+    background-image: url(img/search.png);
+    width: 15%;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+}
+
+/* 메인동영상 */
+.movievideo {
+    border-top: 3px solid #fb4357;
+    background-color: #000;
+}
+
+.container .movievideo .video_wrap {
+    width: 980px;
+    margin: 0 auto;
+    position: relative;
+    
+}
+
+.container .movievideo .video_wrap  > video {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    filter: brightness(75%);
+}
+
+/* 동영상 속 글씨 */
+.container .movievideo .video_wrap .movie_video_title {
+    color: #fff;
+    position: absolute;
+    top: 200px;
+    left: 0px;
+    font-size: 40px;
+    line-height: 1.450em;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.72);
+    pointer-events: none;
+}
+
+.container .movievideo .video_wrap .movie_video_content {
+    color: #fff;
+    position: absolute;
+    top: 270px;
+    left: 0px;
+    font-size: 20px;
+    line-height: 1.450em;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.72);
+    pointer-events: none;
+
+}
+
+.container .movievideo .video_wrap .movie_video_detail {
+    width: 300px;
+    height: 50px;
+    position: absolute;
+    top: 340px;
+    left: 0px;
+    text-overflow: ellipsis;
+
+    
+}
+
+.container .movievideo .video_wrap .movie_video_detail > a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.450em;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.72);
+    cursor: pointer;
+}
+
+/* 상세보기 */
+.container .movievideo .video_wrap .movie_video_detail > .detail {
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    line-height: 1.450em;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.72);
+    cursor: pointer;
+    background-image: url(img/detail.png);
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    
+    
+
+}
+
+.container .movievideo .video_wrap .movie_video_detail img {
+    width: 25px;
+    padding-top: 10px;
+    margin-left: 10px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+}
+
+.container .movievideo .video_wrap .movie_video_detail .detail > img {
+    filter: contrast(300%);
+    filter: brightness(150%);
+    height: 25px;
+    width: 20px;
+    
+}
+
+
+/* 동영상 밑에 무비차트들 */
+.movieChart {
+    width: 980px;
+    padding: 50px 30px 60px;
+    margin: 0 auto;
+}
+
+.movieChart .chartBar {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.movieChart .chartBar .leftBar {
+    float: left;
+}
+
+.movieChart .chartBar .rightBar {
+    float: right;
+    padding: 6px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #e2e2e2;
+    border-top: 1px solid #e2e2e2;
+    border-radius: 15px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.movieChart .chartBar .leftBar > a{
+    font-weight: 400;
+    font-size: 26px;
+    color: #666;
+    line-height: 1.423em;
+    text-decoration: none;
+    margin-right: 20px;
+
+}
+
+.movieChart .chartBar .leftBar > a:hover {
+    font-weight: 700;
+    color: #222;
+}
+
+.movieChart .chartBar .rightBar > a {
+    text-decoration: none;
+}
+
+/* 여기부터 무비차트, 포스터, 예매율 칸*/
+.movieChart .movies {
+    width: 980px;
+    overflow: hidden;
+}
+
+.movieChart .movies li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 32px;
+    box-sizing: border-box;
+    width: 16.9%;
+}
+
+.movieChart .movies .movie_poster {
+    text-align: center;
+}
+
+.movieChart .movies .movie_poster .movie_detail > p {
+    font-size: 18px;
+    color: #222;
+    line-height: 1.167em;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 3px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+
+.movieChart .movies .movie_poster > img {
+    width: 100%;
+    height: 234px;
+    border-radius: 10px;
+}
+
+.movieChart .movies .movie_poster > .movie_detail .left {
+    float: left;
+}
+
+.movieChart .movies .movie_poster > .movie_detail .right {
+    float: right;
+}
+
+.movieChart .movies .movie_poster > .movie_detail .right > span {
+    padding-right: 3px;
+    font-size: 13px;
+}
+
+
+.movieChart .movies .movie_poster > .movie_detail .left > span {
+    font-size: 14px;
+    color: #444;
+    padding-left: 6px;
+}
+.movieChart .movies .movie_poster > .movie_detail div > span > img {
+    width: 15px;
+    height: 15px;
+}
+
+
+
+
+
+
 
 
 
