@@ -13,12 +13,12 @@ a {
     border-bottom: 2px solid red;
 }
 
+
 .container > .contents {
     width: 980px;
-    border: 1px solid #777;
     margin: 0 auto;
-    height: 1000px;
-    overflow: hidden;
+    
+    /* overflow: hidden;  이거하면 왜 옆으로 가냐 */
 }
 
 .container .contents .chart_wrap {
@@ -94,16 +94,27 @@ a {
 }
 
 /* 영화 차트들(목록들) */
-
-/* 차트 제일 큰 틀 */
 .sect-movie-chart {
     margin-top: 30px;
+    display: block;
+    overflow: hidden;
+}
+
+.sect-movie-chart ol {
+    overflow: hidden;
+}
+
+.sect-movie-chart ol li {
+    display: block;
+    width: 197px;
+    padding-bottom: 30px;
+    margin-left: 64px;
     float: left;
 }
 
-.sect-movie-chart {
-    width: 197px;
-    padding-bottom: 30px;
+/* 왼쪽 붙어있는 것들만 margin 제외 */
+.sect-movie-chart .left-nomargin {
+    margin-left: 0;
 }
 
 .sect-movie-chart .box-image {
@@ -116,7 +127,7 @@ a {
     display: block;
     text-align: center;
     margin-bottom: 4px;
-    background-color: #fb4357;
+    background-color: black;
     color: #ffffff;
     height: 28px;
     font-size: 19px;
@@ -139,11 +150,18 @@ a {
     color: inherit;
     font-size: 14px;
     line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 90%;
+    
 }
+
 
 .sect-movie-chart .box-contents .score {
     margin-top: 2px;
     font-size: 11px;
+
 }
 
 .sect-movie-chart .box-contents .score .percent{
@@ -171,7 +189,7 @@ a {
 
 
 .sect-movie-chart .box-contents .score .egg .goldegg > img {
-    width: 11px;
+    width: 15px;
     height: 18px;
     margin: 0px 1px 0px 7px;
 }
@@ -185,7 +203,8 @@ a {
 .sect-movie-chart .box-contents .reservation {
     display: block;
     margin-top: 8px;
-
 }
+
+
 
 
