@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button type="button" onclick="move()">네이버이동</button>
+
+    <script>
+        function move() {
+            // location.href = "index01(팝업).html";
+            location.href = "https://www.naver.com";
+        }
+
+        // 3초마다 reload - 웬만해서 사용 x (정말 필요할 때만)
+        setInterval(function() {
+            location.reload();
+        }, 3000)
+
+    </script>
+    
+</body>
+</html>

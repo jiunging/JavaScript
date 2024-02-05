@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button type="button" id="btn1">인터벌 1 중지</button>
+    <button type="button" id="btn2">인터벌 2 중지</button>
+
+    <script>
+        var a = 10;
+
+        // alert("경고창") //window는 생략이 가능
+
+
+        // 1st
+        // function handler() {
+        //     console.log(1);
+        // }
+
+        // window.setInterval(handler, 1000);
+
+        var count = 0;
+
+        // 2nd
+        var id1 = window.setInterval(function() {
+            console.log(++count);
+        }, 1000);
+
+        var id2 = window.setInterval(function() {
+            console.log('hello world');
+        }, 5000);
+
+
+        // 버튼1 이벤트
+        document.getElementById("btn1").addEventListener("click", function() {
+            clearInterval(id1); // 인터벌 1 중지
+        })
+
+
+
+
+        
+
+    </script>
+    
+</body>
+</html>

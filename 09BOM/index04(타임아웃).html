@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // function time() {
+        //     alert("3초 뒤에 실행됩니다")
+        // }
+
+        // window.setTimeout(time("xx"), 3000);
+
+        // 만약, time함수에 매개변수를 주고 싶다면?
+        function time(text) {
+            
+            return function() {
+                alert("text");
+            }
+            
+        }
+
+        var timeId = window.setTimeout(time("3초 뒤에 실행됩니다"), 3000);
+        clearTimeout(timeId); // 3초 뒤에 실행되지 않는다.
+
+    </script>
+
+    <style>
+        .box {
+            width: 700px;
+            margin: 0 auto;
+        }
+        .title-left {
+            position: relative;
+            animation: myLeft 1s ease-in-out;
+        }
+        .title-right {
+            position: relative;
+            animation: myRight 1s ease-in-out;
+        }
+
+        @keyframes myLeft {
+            from {left: -100px;}
+            to {left: 0}
+        }
+
+        @keyframes myRight {
+            from {right: -100px;}
+            to {right: 0;}
+        }
+
+
+    </style>
+
+    <div class="box">
+        <img src="img/slide01.jpg" width="300" alt="슬라이드1" class="title-left">
+        <img src="img/slide02.jpg" width="300" alt="슬라이드2" class="title-right" style="display: none;">
+    </div>
+
+    <script>
+        setTimeout(function() {
+            var right = document.querySelector(".title-right");
+            right.style.display = "inline";
+        }, 2000)
+    </script>
+
+
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>06번페이지</h3>
+
+    <button onclick="location.href='index07.html';">이동</button>
+    
+    <button onclick="add()">기록강제로 추가하기</button>
+
+
+    <script>
+        // history는 브라우저의 기록관리(사용자 UX에서 중요하게 동작)
+        function add() {
+            // history.pushState(null, '', '변경.html'); // 브라우저 history에 새로운 주소를 추가
+            history.replaceState('data', '', null); // 브라우저의 기록을 변경
+        
+        }
+
+        // replaceState로 변경한 값은 state속성에서 찾아쓸 수 있음
+        // console.log(history.state);
+
+        // 뒤로가기 감지하는 법
+        if(history.state != null) {
+            alert("기록이 변경됨. 원본페이지로 돌아갑니다");
+            location.href = "index01(팝업).html";
+        }
+
+
+    </script>
+
+
+</body>
+</html>
