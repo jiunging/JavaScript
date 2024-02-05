@@ -1,0 +1,191 @@
+h1, h2, ul, ol, li {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav {
+    border-bottom: 2px solid red;
+}
+
+.container > .contents {
+    width: 980px;
+    border: 1px solid #777;
+    margin: 0 auto;
+    height: 1000px;
+    overflow: hidden;
+}
+
+.container .contents .chart_wrap {
+    overflow: hidden;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #000;
+    height: 60px;
+}
+
+.container .contents .chart_wrap .left{
+    float: left;
+}
+
+.container .contents .chart_wrap .right{
+    float: right;
+}
+
+/* 무비차트, 상영예정작 */
+.container .contents .chart_wrap .right > a{
+    text-decoration: none;
+    line-height: 60px;
+    color: #666;
+    font-weight: bold;
+    font-size: 14px;
+    padding-left: 13px;
+    
+}
+
+.container .contents .chart_wrap .left > h1{
+    display: inline-block;
+    font-size: 35px;
+}
+
+.container .contents .chart_wrap .right > h3{
+    display: inline;
+}
+
+/* 무비차트 아래 현재 상영작만 보기 */
+.chart-sorting {
+    margin-top: 20px;
+}
+
+.chart-sorting .nowshow {
+    display: inline;
+}
+
+.chart-sorting .nowshow > span {
+    color: #666;
+    font-size: 13px;
+
+}
+
+.chart-sorting .order_type {
+    padding: 3px 5px;
+    float: right;
+    font-size: 13px;
+    line-height: 27px;
+    border: 1px solid #b4b3aa;
+    color: #666;
+    font-weight: bold;
+}
+
+.chart-sorting > button {
+    float: right;
+    padding: 0 5px 0;
+    border: 2px solid #7b7b7b;
+    color: #7b7b7b;
+    height: 25px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* 영화 차트들(목록들) */
+
+/* 차트 제일 큰 틀 */
+.sect-movie-chart {
+    margin-top: 30px;
+    float: left;
+}
+
+.sect-movie-chart {
+    width: 197px;
+    padding-bottom: 30px;
+}
+
+.sect-movie-chart .box-image {
+    width: 100%;
+    height: 272px;
+    margin-bottom: 28px;
+}
+
+.sect-movie-chart .box-image .rank {
+    display: block;
+    text-align: center;
+    margin-bottom: 4px;
+    background-color: #fb4357;
+    color: #ffffff;
+    height: 28px;
+    font-size: 19px;
+    line-height: 28px;
+    font-weight: 600;
+}
+
+.sect-movie-chart .box-image .thumb-image > img {
+    height: 260px;
+    width: 100%;
+}
+
+.sect-movie-chart .box-contents {
+    height: 93px;
+}
+
+.sect-movie-chart .box-contents > a {
+    display: block;
+    width: 100%;
+    color: inherit;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.sect-movie-chart .box-contents .score {
+    margin-top: 2px;
+    font-size: 11px;
+}
+
+.sect-movie-chart .box-contents .score .percent{
+    color: #666;
+    
+}
+
+.sect-movie-chart .box-contents .score .percent > span{
+    color: black;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.sect-movie-chart .box-contents .score .egg {
+    display: inline-block;
+    color: black;
+    
+}
+
+.sect-movie-chart .box-contents .score .egg .percent {
+    color: #000000;
+    font-size: 13px;
+    
+}
+
+
+.sect-movie-chart .box-contents .score .egg .goldegg > img {
+    width: 11px;
+    height: 18px;
+    margin: 0px 1px 0px 7px;
+}
+
+.sect-movie-chart .box-contents .txt-info {
+    color: #666666;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.sect-movie-chart .box-contents .reservation {
+    display: block;
+    margin-top: 8px;
+
+}
+
+
