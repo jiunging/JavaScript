@@ -7,7 +7,7 @@ li {
 
 .container .contents {
     width: 980px;
-    height: 1000px;
+    height: 2000px;
     border: 1px solid #777;
     border-top: none;
 }
@@ -199,6 +199,93 @@ li {
     margin-bottom: 10px;
     float: right;
 }
+
+
+/* 트레일러 구역 */
+.trailer-secter {
+    padding-top: 40px;
+}
+
+.trailer-heading {
+    margin-bottom: 20px;
+    width: 100%;
+    background: #f6f6f6;
+    overflow: hidden;
+}
+
+
+.trailer-heading > strong {
+    margin-left: 16px;
+    line-height: 39px;
+    color: #333333;
+    font-size: 14px;
+    
+}
+
+.trailer-heading > small {
+    margin-left: -2px;
+    line-height: 39px;
+    color: #333333;
+    font-size: 14px;
+}
+
+.image-wrap {
+    width: 260px;
+}
+
+.trailer-image {
+    margin-top: 20px;
+}
+
+.trailer-image img {
+    width: 260px;
+    height: 142px;
+}
+
+.trailer-contents a > strong{
+    border-color: #2a6fb6;
+    border: 1px solid #2a6fb6;
+    display: inline-block;
+    margin-right: 5px;
+    padding: 0 3px;
+    color: #2a6fb6;
+    font-size: 12px;
+    text-align: center;
+}
+
+.trailer-contents a > span{
+    font-size: 14px;
+    color: #333333;
+    font-weight: bold;
+}
+
+.trailer-contents-div {
+    font-size: 13px;
+    color: #666666;
+    font-weight: bold;
+}
+
+.img-wrrap {
+    position: relative;
+    display: block;
+}
+
+.playbtn {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 44px;
+    height: 44px;
+    background: url(../img/play_icon.png);
+    
+}
+
+
+
+
+
+
+
 
 
 

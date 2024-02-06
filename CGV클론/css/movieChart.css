@@ -207,4 +207,47 @@ a {
 
 
 
+/* 성별 분표 */
+.chart {
+    margin-top: 120px;
+}
 
+.chart .graph {
+    border: 1px solid #cccccc;
+    border-right: none;
+    border-left: none;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.chart .graph .left {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    border-right: 1px solid #cccccc;
+}
+
+
+
+.chart .graph .right {
+    float: right;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.chart .graph li strong {
+    display: block;
+    height: 58px;
+    border-bottom: 1px solid #cccccc;
+    color: #4a4a4a;
+    text-align: center;
+    line-height: 58px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+/* 중간 광고 */
+.ad-mid {
+    margin-top: 30px;
+}
