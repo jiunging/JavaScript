@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 사용자의 위치정보
+        console.log(navigator);
+        console.log(navigator.geolocation);
+
+        // 콜백 -> 콜 할테니까 -> 결과를 백해달라
+        // navigator.geolocation.getCurrentPosition(성골콜백, 에러콜백)        
+        navigator.geolocation.getCurrentPosition(success, error);
+
+        function success(position) {
+            console.log("성공", position);
+            console.log(position.timestamp); // 요청시간
+            console.log(position.coords.latitude); // 사용자의 위도
+            console.log(position.coords.longitude); // 사용자의 경도
+        }
+
+        function error(err) {
+            console.log("실패", err);
+        }
+
+
+
+
+    </script>
+    
+</body>
+</html>

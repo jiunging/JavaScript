@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>최신관심목록</h2>
+
+    <div id="recentpics">
+        <img src="img/1.jpg" alt="">
+    </div>
+
+    <script>
+        var recentpic = document.getElementById("recentpics");
+        var clickedImages = JSON.parse(localStorage.getItem("clickedImages"));
+
+        var img1 = document.createElement("img");
+
+        img1.src = clickedImages[0];
+
+        console.log(img1);
+        
+
+        // recentpic.innerHTML = um1;
+        recentpic.appendChild(img1);
+
+
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,209 @@
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.container .contents {
+    width: 980px;
+    height: 1000px;
+    border: 1px solid #777;
+    border-top: none;
+}
+
+.container .contents .sect-base-movie {
+    padding-top: 35px;
+    overflow: hidden;
+}
+
+.container .contents .sect-base-movie .box-image {
+    width: 185px;
+    height: 260px;
+    margin-right: 30px;
+    float: left;
+}
+
+.container .contents .sect-base-movie .box-contents {
+    float: left;
+}
+
+/* 영화 제목 */
+.container .contents .sect-base-movie .box-contents .title > strong {
+    font-size: 23px;
+    color: #1a1919;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.container .contents .sect-base-movie .box-contents .title > span {
+    color: #a16423;
+    border: 2px solid #a16423;
+    margin-left: 4px;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.container .contents .sect-base-movie .box-contents .title > p {
+    color: #666666;
+    font-size: 13px;
+    /* font-weight: bold; */
+}
+
+.container .contents .box-image a img {
+    width: 185px;
+    height: 260px;
+}
+
+/* egg부분 */
+.container .contents .sect-base-movie .box-contents .score {
+    margin-top: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d9d6c8;
+}
+
+.box-contents .score .percent {
+    color: #666;
+    font-size: 14px;
+}
+
+.box-contents .score .percent > span {
+    color: black;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.box-contents .score .egg {
+    display: inline-block;
+    margin-left: 8px
+}
+
+.box-contents .score .egg .percent {
+    color: #000000;
+    margin-top: 8px;
+}
+
+.box-contents .score .egg .egg-image > img {
+    width: 20px;
+    height: 22px;
+}
+
+
+.middle-border {
+    width: 5px;
+    height: 3px;
+    border-left: thin solid #777;
+}
+
+.details {
+    padding-top: 18px;
+    color: #333333;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.details ul li {
+    margin-bottom: 3px;
+}
+
+/* 예매하기 */
+.box-contents .reserve a {
+    display: inline-block;
+    margin-top: 20px;
+    width: 95px;
+    height: 37px;
+    background: url(../img/reservationtool.png);
+    background-repeat: no-repeat;
+} 
+
+/* imax랑 4dx */
+.box-contents {
+    width: 765px;
+    position: relative;
+}
+
+
+.box-contents .screentype {
+    position: absolute;
+    right: 0;
+    top: 170px;
+}
+
+.box-contents .screentype a {
+    margin-left: 9px;
+}
+
+.box-contents .screentype .imax {
+    display: inline-block;
+    width: 80px;
+    height: 56px;
+    background: url(../img/screentype.png);
+}
+
+.box-contents .screentype .fordx {
+    display: inline-block;
+    width: 80px;
+    height: 56px;
+    background: url(../img/screentype.png);
+    background-position: 0 -112px;
+}
+
+
+/* 주요정보, 등등 뭐시기 가운데 빨간색 박스 */
+.cols-content {
+    margin-top: 55px;
+    overflow: hidden;
+}
+
+.cols-content .col-detail {
+    width: 800px;
+    display: inline-block; /* float 사용 시 인라인 레벨로 변경 */
+    vertical-align: top;
+}
+
+.cols-content .col-detail .tab-menu {
+    text-align: center;
+    font-size: 0;
+}
+
+.cols-content .col-detail .tab-menu > li {
+    display: inline-block; /* li를 가로로 나열하도록 설정 */
+}
+
+.cols-content .col-detail .tab-menu > li > a {
+    color: white;
+    height: 39px;
+    display: inline-block;
+    padding: 0 15px;
+    background: #fb4357;
+    font-size: 14px;
+    text-align: center;
+    line-height: 39px;
+    font-weight: bold;
+    border-right: 1px solid white;
+}
+
+.col-aside {
+    float: right;
+}
+
+.col-aside .ad-first,
+.col-aside .ad-second {
+    margin-bottom: 15px;
+}
+
+.col-aside img {
+    width: 160px;
+    height: 300px;
+    margin-bottom: 10px;
+    float: right;
+}
+
+
+
+
+
+
+
+

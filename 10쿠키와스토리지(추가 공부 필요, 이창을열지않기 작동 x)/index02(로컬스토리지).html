@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>스토리지는 브라우저 내에 (키=값) 으로 저장하는 저장소</h3>
+    <h3>localStorage는 브라우저를 종료하더라도 값이 유지가 됨</h3>
+    <h3>sessionStorage는 브라우저를 종료하면 값이 사라짐</h3>
+    <h3>사용방법은 동일함</h3>
+
+    <button id="btn">스토리지 생성하기</button>
+
+    <script>
+        var btn = document.getElementById("btn");
+        btn.onclick = function() {
+            // console.log(localStorage);
+
+            // 저장 - 문자열 밖에 저장을 못함, 그래서 배열로 저장하려면 JSON 사용
+            localStorage.setItem("aaa", "엄준식");
+            localStorage.setItem("bbb", "험준식");
+            localStorage.setItem("ccc", JSON.stringify(["a", "b", "c"]));
+            
+            // 사용, 배열로 출력하려면 JSON 사용
+            console.log(localStorage.getItem("aaa"))
+            console.log(localStorage.getItem("bbb"))
+            console.log(JSON.parse(localStorage.getItem("ccc")))
+
+            // 삭제
+            localStorage.removeItem("aaa"); // 키를 입력
+            //전체삭제
+            localStorage.clear(); // 전체삭제
+
+ 
+        }
+
+
+    </script>
+
+</body>
+</html>

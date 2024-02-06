@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>쿠키 - 서버와 클라이언트의 지속적인 정보유지 수단(키=값) 형태로 생겼음</h3>
+
+    <input type="text" name="cookieName">
+    <input type="text" name="cookieValue">
+
+    <button type="button" id="btn">쿠키생성</button>
+
+
+    <hr>
+    <input type="text" name="findCookie">
+    <button type="button" id="btn2">쿠키찾기</button>
+
+
+    <script>
+        // js 쿠키 사용방법
+        // document.cookie = "age=20; expires=날짜"
+
+        // 쿠키생성하기
+        var btn = document.getElementById("btn");
+        btn.onclick = function() {
+            createCookie();
+        }
+
+        function createCookie() {
+            // 쿠키로 만들 name을 얻는다
+            var name = document.querySelector("input[name=cookieName]").value;
+            var value = document.querySelector("input[name=cookieValue]").value;
+
+            // console.log(name, value)
+
+            // 쿠키 만료시간 성정
+            // var date = new Date(); // 현재 날짜
+            
+            var millis = Date.now() + 3600000; // 1시간 (3600에 1000곱함)
+            var time = new Date(millis);
+            console.log(time);
+            console.log(time.toUTCString());
+
+            // 쿠키생성
+            document.cookie = name + "=" + value + "; expires=" + time.toUTCString(); 
+        }
+
+
+        // 쿠키 찾기
+        var btn2 = document.getElementById("btn2");
+
+        btn2.onclick = function() {
+            findCookie();
+        }
+
+        //
+        function findCookie() {
+            var find = document.querySelector("input[name=findCookie]").value;
+            var coo = document.cookie;
+            //console.log(coo); // 찍어보면 나옴, 그래서 아래 ;로 split하는거임
+
+            var arr = coo.split("; "); //쿠키 스플릿
+            //console.log(arr); // 찍어보면 쿠키들 나옴
+
+            for(var i=0; i<arr.length; i++) {
+                //console.log(arr[i]);
+                if(arr[i].indexOf( find + "=") != -1 ){ //indexOf != -1은 찾았음. 
+                    console.log( arr[i].replace(find + "=", ""))
+                }
+
+            }
+        }
+
+
+
+
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        .pics img {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>localStorage를 이용하여 마지막에 클릭한 2개의 정보를 불러오기</h3>
+    
+    <div class="pics">
+        <img src="img/1.jpg" alt="" id="img1">
+        <img src="img/2.jpg" alt="" id="img2">
+        <img src="img/3.jpg" alt="" id="img3">
+        <img src="img/4.jpg" alt="" id="img4">
+    </div>
+
+    <button type="button" id="btn1">최신정보확인하기</button>
+
+    <script>
+        var pics = document.querySelector(".pics");
+        var btn1 = document.getElementById("btn1");
+
+        // 배열 선언
+        var clickedImages = [];
+
+        pics.onclick = function(e) {
+            if(e.target.tagName === 'IMG') {
+                clickedImages.push(e.target.src);
+            }
+
+            if(clickedImages.length > 2) {
+                clickedImages.shift(); // 최근 정보 제거
+            }
+
+            localStorage.setItem("clickedImages", JSON.stringify(clickedImages));
+        }
+
+        btn1.onclick = function() {
+            location.href="quiz01-01.html";
+        }
+
+    </script>
+
+    
+
+
+</body>
+</html>
