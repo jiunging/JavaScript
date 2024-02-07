@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button type="button" id="btn">데이터가져오기</button>
+
+    <ul class="list">
+
+    </ul>
+    
+
+    <script>
+        var btn = document.getElementById("btn");
+        var list = document.querySelector(".list");
+
+        var key = "X%2FbLULMOpepLMEnpngaGrCAlUSGAmCVcMfejuUBfNsuAbd5UBSsd3yQvgyc%2BXVpq3hG%2FT5pShiBnzpzhY64ZPw%3D%3D";
+        
+        btn.onclick = function() {
+            ajax();
+            list.innerHTML = "<li>로딩중....</li>";
+        }
+
+
+
+        function ajax() {
+            // http://apis.data.go.kr/1352000/ODMS_COVID_04/callCovid04Api
+            fetch("http://apis.data.go.kr/1352000/ODMS_COVID_04/callCovid04Api?serviceKey=" + key + "&numOfRows=100&pageNo=1&apiType=JSON&std_day=2021-12-15")
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                console.log(data);
+                
+                var arr = data.items; // items데이터
+
+                var str = "";
+
+                for(var i = 0; i < arr.length; i++) {
+                    var gubun = arr[i].gubun; // 지역
+                    var deathCnt = arr[i].deathCnt; // 사망자 수
+
+                    // 문자열 더하기
+                    str += "<li><span>" + gubun + "</span> 사망자수: " + deathCnt + "</li>";
+
+                }
+                list.innerHTML = str;
+
+            })
+        }
+
+
+
+
+    </script>
+
+
+</body>
+</html>
