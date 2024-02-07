@@ -1,0 +1,108 @@
+body {
+    background-color: black;
+    color: white;
+}
+.popwrap {
+    padding: 5px;
+    background-color: black;
+    text-align: left;
+}
+
+.sect-layerplayer {
+    /* 일단 이거 width설정 */
+    width: 1200px;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+
+
+.title {
+    display: block;
+    color: #cccccc;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.title > span {
+    border: 1px solid #2a6fb6;
+    color: #2a6fb6;
+    height: 17px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+.descript > textarea {
+    color: white;
+    font-weight: bold;
+    width: 940px;
+    height: 110px;
+    border: 1px solid #4d4d4d;
+    background: none;
+    line-height: 1.7;
+    padding: 10px;
+}
+
+.col-pop-player {
+    display: inline-block;
+    float: left;
+    /* width: 80%; */
+    box-sizing: border-box;
+
+}
+
+.col-pop-playerinfo {
+    display: inline-block;
+    width: 140px;
+    float: right;
+    box-sizing: border-box;
+}
+
+.popup-image-wrap {
+    width: 140px;
+    height: 200px;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    
+}
+
+.popup-contents .title{
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 12px;
+    margin-bottom:  5px;
+}
+
+.genre, .open {
+    color: #999999;
+    font-size: 13px;
+}
+
+.reserve .reservation {
+    margin-top: 3px;
+    background: url(../img/reservationtool.png) 0 0 no-repeat;
+    width: 57px;
+    height: 25px;
+    background-position: -96px 0px;
+}
+
+
+
+
+
