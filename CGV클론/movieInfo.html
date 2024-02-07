@@ -96,7 +96,7 @@
 
         <div class="container">
             <div class="contents">
-                <div class="sect-base-movie">
+                <div class="sect-base-movie" style="width: 100%;">
 
                     <div class="box-image">
                         <a href="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000087/87985/87985_1000.jpg">
@@ -213,14 +213,12 @@
                             </ul>
                         </div>
                         
-
-
                         <div class="ad-mid">
                             <img src="img/demonslayer-midad.jpg" alt="">
                         </div>
 
+
                         <div class="trailer-secter">
-                            
                             <div class="trailer-heading">
                                 <strong>트레일러</strong>
                                 <small>1건</small>
@@ -232,8 +230,10 @@
                                         <a href="#">
                                             <span class="img-wrrap">
                                                 <img src="img/trailer-demonslayer.jpg" alt="">
+                                            
+                                                <span class="playbtn"></span>
+
                                             </span>
-                                            <span class="playbtn"></span>
                                         </a>
                                     </div>
 
@@ -245,12 +245,133 @@
                                             <div class="trailer-contents-div">2024.01.19</div>
                                     </div>
                                 </li>
-                                
                             </ul>
-                                
                         </div>
 
 
+                        <div class="stillcut-sector">
+                            <div class="trailer-heading">
+                                <strong>스틸컷</strong>
+                                <small id="">1/13건</small>
+                            </div>
+
+                            <div class="slider-wrap">
+                                <div class="slider">
+                                    <div class="item-wrap on">
+                                        <div class="item" style="width: 800px; height: 450px; display: block;">
+                                            <img src="img/stillcut_demonslayer1.jpeg">
+                                        </div>
+                                    </div>
+                            
+                                    <div class="item-wrap">
+                                        <div class="item" style="width: 800px; height: 450px; display: block;">
+                                            <img src="img/stillcut_demonslayer2.jpeg">
+                                        </div>
+                                    </div>
+
+                                    <div class="item-wrap">
+                                        <div class="item" style="width: 800px; height: 450px; display: block;">
+                                            <img src="img/stillcut_demonslayer3.jpeg">
+                                        </div>
+                                    </div>
+
+                                    <div class="item-wrap">
+                                        <div class="item" style="width: 800px; height: 450px; display: block;">
+                                            <img src="img/stillcut_demonslayer4.jpeg">
+                                        </div>
+                                    </div>
+
+                                    <div class="item-wrap">
+                                        <div class="item" style="width: 800px; height: 450px; display: block;">
+                                            <img src="img/stillcut_demonslayer5.jpeg">
+                                        </div>
+                                    </div>
+
+                                    <div class="item-wrap">
+                                        <div class="item" style="width: 800px; height: 450px; display: block;">
+                                            <img src="img/stillcut_demonslayer6.jpeg">
+                                        </div>
+                                    </div>
+
+                                    <div class="item-wrap">
+                                        <div class="item" style="width: 800px; height: 450px; display: block;">
+                                            <img src="img/stillcut_demonslayer7.jpeg">
+                                        </div>
+                                    </div>
+
+                                    <div class="item-wrap">
+                                        <div class="item" style="width: 800px; height: 450px; display: block;">
+                                            <img src="img/stillcut_demonslayer8.jpeg">
+                                        </div>
+                                    </div>
+
+                                    <div class="item-wrap">
+                                        <div class="item" style="width: 800px; height: 450px; display: block;">
+                                            <img src="img/stillcut_demonslayer9.jpeg">
+                                        </div>
+                                    </div>
+
+                                    <div class="item-wrap">
+                                        <div class="item" style="width: 800px; height: 450px; display: block;">
+                                            <img src="img/stillcut_demonslayer10.jpeg">
+                                        </div>
+                                    </div>
+
+                                    <div class="item-wrap">
+                                        <div class="item" style="width: 800px; height: 450px; display: block;">
+                                            <img src="img/stillcut_demonslayer11.jpeg">
+                                        </div>
+                                    </div>
+
+                                    <div class="item-wrap">
+                                        <div class="item" style="width: 800px; height: 450px; display: block;">
+                                            <img src="img/stillcut_demonslayer12.jpeg">
+                                        </div>
+                                    </div>
+
+                                    <div class="item-wrap">
+                                        <div class="item" style="width: 800px; height: 450px; display: block;">
+                                            <img src="img/stillcut_demonslayer13.jpg">
+                                        </div>
+                                    </div>
+
+                                    <button type="button" class="btn-prev"></button>
+                                    <button type="button" class="btn-next"></button>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                                var items = document.querySelectorAll(".item-wrap");
+                                var prevbtn = document.querySelector(".btn-prev");
+                                var nextbtn = document.querySelector(".btn-next");
+                                var index = 0;
+
+                                prevbtn.onclick = function() {
+                                    if(index <= 0) {
+                                        index = items.length;
+                                    }
+                                    index--;
+                                    console.log(index);
+                                    changeImg(index);
+                                }
+                                nextbtn.onclick = function() {
+                                    if(index > items.length - 2) {
+                                        index = 1;
+                                    }
+                                    index++;
+                                    console.log(index);
+                                    changeImg(index);
+                                }
+
+                                function changeImg(index) {
+                                    for(var i = 0; i < items.length; i++) {
+                                        items[i].classList.toggle("on", i === index);
+                                        console.log("현재 토글 위치는: " + i);
+                                    }
+                                }
+                        </script>
 
 
                     </div>
