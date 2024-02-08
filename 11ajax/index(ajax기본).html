@@ -58,18 +58,18 @@
         // })
 
         // 5th - 콜백에서 리턴을 걸면, 다시 fetch에서 then절로 결과를 받을 수 있음
-        fetch("example.txt").then(function(response) {
-            return response.text();
-        })
-        .then(function(data) {
-            return data + "hello";
-        })
-        .then(function(data) {
-            return data + "bye";
-        })
-        .then(function(data) {
-            console.log(data);
-        })
+        // fetch("example.txt").then(function(response) {
+        //     return response.text();
+        // })
+        // .then(function(data) {
+        //     return data + "hello";
+        // })
+        // .then(function(data) {
+        //     return data + "bye";
+        // })
+        // .then(function(data) {
+        //     console.log(data);
+        // })
 
         // 6nd - 서로 약속된 형식의 json or xml 형식을 사용함
         fetch("example.json").then(function(response) {

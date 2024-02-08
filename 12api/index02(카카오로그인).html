@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- SDK링크 -->
+    <script src="js/kakao.min.js"></script>
+
+</head>
+<body>
+
+    <button onclick="kakaoLogin()">카카오로그인</button>
+
+    <script>
+        // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해야 합니다.
+        Kakao.init('84228524fdef4b9719a5261197787b4a');
+    
+        // SDK 초기화 여부를 판단합니다.
+        console.log(Kakao.isInitialized());
+
+
+        // 1. 카카오로그인
+        function kakaoLogin() {
+            Kakao.Auth.authorize({
+                redirectUri: 'http://127.0.0.1:5500/12api/index03.html', // 지금은 클라이언트로 결과를 받았지만, 나중에는 컨트롤러 주소가 되면 된다
+            });
+        }
+
+
+      </script>
+    
+</body>
+</html>

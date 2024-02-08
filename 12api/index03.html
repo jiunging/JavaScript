@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="js/kakao.min.js"></script>
+
+</head>
+<body>
+
+
+
+    <h3>리다이렉트 URI를 받은 화면</h3>
+
+
+    <script>
+
+        // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해야 합니다.
+        Kakao.init('84228524fdef4b9719a5261197787b4a');
+    
+        // SDK 초기화 여부를 판단합니다.
+        console.log(Kakao.isInitialized());
+
+        // 2. 인가코드 받기
+        // JS에서 URL값 얻는 방법
+        var url = new URLSearchParams(location.search);
+
+        if(url.get("code") != null) {
+            getToken();
+        }
+
+        // 3. 토큰발급
+        function getToken() {
+            var param = url.get("code");
+            console.log(param);
+
+            // 폼 형식 데이터는 키=값&키=값...
+            var data = "grant_type=authorization_code" +
+                       "&client_id=210a3ffacb519cfb2361301bd8a62946" + // 이건 js키가 아니라 RESTAPI키임!!!
+                       "&redirect_uri=http://127.0.0.1:5500/12api/index03.html" +
+                       "&code=" + param;
+
+            // fetch POST 방식 - 보내는 데이터는 body에다가 집어넣음, 서버가 반드시 있어야함, 근데 맛보기
+            fetch("https://kauth.kakao.com/oauth/token", {
+                method: "post",
+                headers: {
+                    'Content-type': 'application/x-www-form-urlencoded',
+                },
+                body: data
+
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                console.log(data);
+
+
+                // data안에 들어있는 access_token을 sessionStorage같은 곳에 저장해서, 사용할 수 있도록 만들어줄 수 있음
+                
+                // kakao sdk에 access_token을 저장
+                Kakao.Auth.setAccessToken(data.access_token)
+                getUserInfo();
+
+            })
+        }
+
+
+        // 4. 사용자 정보 가져오기
+        function getUserInfo() {
+            Kakao.API.request({
+                url: '/v2/user/me',
+            })
+            .then(function(response) {
+                console.log(response);
+            })
+            .catch(function(error) {
+                console.log(error);
+            })
+        }
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
