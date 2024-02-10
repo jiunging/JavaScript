@@ -175,7 +175,7 @@ body {
 
 .nav .contents .nav_menu .search > .searchBtn {
     padding: 0;
-    background-image: url(img/search.png);
+    background-image: url(../img/search.png);
     width: 15%;
     height: 30px;
     background-size: contain;

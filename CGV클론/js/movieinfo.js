@@ -13,15 +13,25 @@ trailercount.innerHTML = trailers.length + "건";
 
 // 트레일러 동영상 버튼 누르면 팝업
 var playvideo = document.querySelector(".img-wrrap");
+stillcutcount.innerHTML = "1/" + items.length + "건";
 
 playvideo.onclick = function() {
+    var figure;
+    for(var i = 0; i < playvideo.childNodes.length; i++) {
+        if(playvideo.children[i].currentSrc.includes("demonslayer")) {
+            figure = "popup/popup_demonslayer.html";
+            break;
+        } else {
+            figure = "https://www.naver.com";
+        }
+    }
 
     var popupWidth = 1229;
     var popupHeight = 835;
     var leftPosition = (window.screen.width - popupWidth) / 2;
     var topPosition = (window.screen.height - popupHeight) / 2;
 
-    window.open("popup/popup_demonslayer.html", "귀칼팝업", "width=" + popupWidth + ", height=" + popupHeight + ", left=" + leftPosition + ", top=" + topPosition);
+    window.open(figure, "귀칼팝업", "width=" + popupWidth + ", height=" + popupHeight + ", left=" + leftPosition + ", top=" + topPosition);
 }
 
 
