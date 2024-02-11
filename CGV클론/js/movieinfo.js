@@ -15,19 +15,39 @@ trailercount.innerHTML = trailers.length + "건";
 var playvideo = document.querySelector(".img-wrrap");
 stillcutcount.innerHTML = "1/" + items.length + "건";
 
+
 playvideo.onclick = function() {
     var figure;
-    for(var i = 0; i < playvideo.childNodes.length; i++) {
-        if(playvideo.children[i].currentSrc.includes("demonslayer")) {
+    for (var i = 0; i < playvideo.children.length; i++) {
+        if (playvideo.children[i].currentSrc.includes("demonslayer")) {
             figure = "popup/popup_demonslayer.html";
+            break;
+        } else if (playvideo.children[i].currentSrc.includes("wongcar")) {
+            figure = "popup/popup_wongcar.html";
+            break;
+        } else if (playvideo.children[i].currentSrc.includes("dogdays")) {
+            figure = "popup/popup_dogdays.html";
+            break;
+        } else if (playvideo.children[i].currentSrc.includes("deadman")) {
+            figure = "popup/popup_deadman.html";
+            break;
+        } else if (playvideo.children[i].currentSrc.includes("Argylle")) {
+            figure = "popup/popup_argylle.html";
+            break;
+        } else if (playvideo.children[i].currentSrc.includes("picnic")) {
+            figure = "popup/popup_picnic.html";
+            break;
+        } else if (playvideo.children[i].currentSrc.includes("citizen")) {
+            figure = "popup/popup_citizen.html";
             break;
         } else {
             figure = "https://www.naver.com";
         }
     }
 
-    var popupWidth = 1229;
-    var popupHeight = 835;
+
+    var popupWidth = 1400;
+    var popupHeight = 905;
     var leftPosition = (window.screen.width - popupWidth) / 2;
     var topPosition = (window.screen.height - popupHeight) / 2;
 
