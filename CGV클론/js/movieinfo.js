@@ -40,14 +40,31 @@ playvideo.onclick = function() {
         } else if (playvideo.children[i].currentSrc.includes("citizen")) {
             figure = "popup/popup_citizen.html";
             break;
-        } else {
+        } else if (playvideo.children[i].currentSrc.includes("Anatomyofafall")) {
+            figure = "popup/popup_anatomyofafall.html";
+            break;
+        } else if (playvideo.children[i].currentSrc.includes("walker")) {
+            figure = "popup/popup_walker.html";
+            break;
+        } else if (playvideo.children[i].currentSrc.includes("anemone")) {
+            figure = "popup/popup_anemone.html";
+            break;
+        } else if (playvideo.children[i].currentSrc.includes("soundoffreedom")) {
+            figure = "popup/popup_soundoffreedom.html";
+            break;
+        } else if (playvideo.children[i].currentSrc.includes("theholdovers")) {
+            figure = "popup/popup_theholdovers.html";
+            break;
+        } 
+        
+        else {
             figure = "https://www.naver.com";
         }
     }
 
 
-    var popupWidth = 1400;
-    var popupHeight = 905;
+    var popupWidth = 1150;
+    var popupHeight = 800;
     var leftPosition = (window.screen.width - popupWidth) / 2;
     var topPosition = (window.screen.height - popupHeight) / 2;
 
