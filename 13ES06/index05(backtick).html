@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let name = "홍길동";
+
+        console.log("제 이름은 " + name + "입니다");
+        // 이건 ~인데, 쉬프트 빼고임 `
+        console.log(`제 이름은 ${name} 입니다`);
+
+        let num = parseInt( Math.random() * 20 ); // 0~19까지 정수
+
+        console.log(`${num >= 10 ? num : '10보다 작음'} 입니다`);
+
+        // 백틱을 중첩으로 쓸 수도 있음
+        console.log(`${num >= 10 ? num : `0${num}` } 입니다`);
+
+
+
+
+    </script>
+    
+</body>
+</html>

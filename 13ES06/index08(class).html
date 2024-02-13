@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        class Person {
+            name = "홍길동";
+            age = 1;
+            state = {};
+
+            // 생성자 - 반드시 1개여야 함
+            constructor(addr) {
+                this.addr = addr; // 멤버변수 addr에, 매개변수 addr을 저장한다.
+            }
+            
+            // 일반함수
+            getAge() {
+                return this.age;
+            }
+
+            // 익명함수
+            func = () => {
+                return this.name;
+            }
+        }
+            // 클래스 -> 객체로 생성
+            let p = new Person()
+            console.log(p.getAge())
+            console.log(p.func())
+
+            let p2 = new Person("서울시");
+            console.log(p2.addr);
+
+
+    </script>
+    
+</body>
+</html>

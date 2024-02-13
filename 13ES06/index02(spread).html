@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [1,2,3];
+        console.log(...arr); // 배열형이 아닌, 1 2 3
+
+        const num = [...arr];
+        console.log(num); // 배열형식으로 나옴
+
+        // 배열에 배열을 추가
+        const num2 = [10, 20, 30, ...arr];
+        console.log(num2);
+
+        // 중간에 추가도 가능
+        const num3 = [10, ...arr, 20, 30];
+        console.log(num3);
+
+        // 배열 복사
+        const num4 = [...arr];
+        console.log(num4);
+
+        // 배열의 병합
+        console.log([...arr, ...arr]);
+
+        console.log("-------------------------------------");
+        
+        // 함수에서 전개구문
+        function func(x, y, z) {
+            return x + y + z;
+        }
+
+        console.log(func(1, 2, 3));
+        console.log(func(...arr)); // func(1,2,3)
+
+        // 이건 답이 4가 나옴, 왜냐, 1,2, 1,2,3이 들어가는데, 
+        // arr의 첫번째 값이 1이기 때문, func의 매개변수 x,y,z 3개니까 ㅋㅋ
+        console.log(func(1,2, ...arr)); // func(1,2,1,2,3); 
+
+        // 가변적 매개변수가 될 수 있음
+        function func2(x,y, ...z) {
+            return [x, y, ...z] // 배열로 반환
+        }
+
+        console.log(func2(1, 2, 3))
+        console.log(func2(1, 2, 3, 4, 5))
+
+        // default 매개변수(단, 맨 마지막에 적습니다)
+        function func3(x, y = 10, z = 20) {
+            console.log(x + y + z);
+        }
+        func3(1);
+
+        
+
+
+
+
+    </script>
+    
+</body>
+</html>

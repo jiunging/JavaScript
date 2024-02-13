@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script type="module">
+        // import {name, age, getInfo, sum, add} from './index10.js';
+        // console.log(name);
+        // console.log(age);
+        // getInfo();
+
+        // add(10);
+        // add(20);
+        // console.log(sum);
+
+
+        // 가져오기 2
+        import * as test from './index10.js';
+
+        console.log(test.name);
+        console.log(test.age);
+        test.getInfo();
+        test.add(10);
+        console.log(test.sum);
+
+    </script>
+    
+
+
+    
+</body>
+</html>

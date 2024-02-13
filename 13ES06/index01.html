@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>let과 const변수</h3>
+    
+    <ul class="box">
+        <li>목록</li>
+        <li>목록</li>
+        <li>목록</li>
+        <li>목록</li>
+    </ul>
+
+    <script>
+        // let변수는 중복선언 x, 중괄호 스코프
+        let a = 1;
+        // let a = "a"; // 불가능
+
+        if(true) {
+            let a = 100;
+            let b = 10;
+            console.log(a); // let의 유효범위 - 중괄호 스코프
+        }
+
+        console.log(a);
+        // console.log(b);
+
+        console.log("--------------------------------")
+
+        // li에 이벤트를 건다(반복)
+        var lis = document.querySelectorAll(".box li");
+
+        // 이거 var i로 하면 i값이 계속 4만 나옴, 그래서 let으로 하면 0, 1, 2, 3이렇게 뽑을 수 있음
+        for(let i = 0; i < lis.length; i++) {
+            lis[i].addEventListener("click", function() {
+                console.log("엄", i);
+                console.log(lis[i]);
+            })
+        }
+
+        console.log("--------------------")
+
+        const GENDER = "남자"; // 상수
+        // GENDER = "여자"; // 변경불가
+
+        const arr = ["홍길동", "이순신"];
+        // arr = ["엄준식"]; // 배열 자체를 바꾸는 것은 불가능
+
+        arr[0] = "엄준식";
+        arr.push("둘리"); // 뒤에다 push
+        arr.unshift("엄둘리"); // 앞에다 push
+
+        console.log(arr); // 가능
+
+        const PERSON = {age : 20};
+        console.log(PERSON);
+        // PERSON {name : "엄준식"}; // 객체 자체를 바꾸는 것은 불가
+        PERSON.age = 30;
+        PERSON.name = "엄준식";
+        PERSON.hobby = "축구";
+        console.log(PERSON);
+
+
+
+
+    </script>
+
+
+</body>
+</html>

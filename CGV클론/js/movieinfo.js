@@ -89,6 +89,7 @@ nextbtn.onclick = function() {
     stillcutcount.innerHTML = index+1 + "/" + items.length + "건";
 }
 
+
 function changeImg(index) {
     for(var i = 0; i < items.length; i++) {
         items[i].classList.toggle("on", i === index);

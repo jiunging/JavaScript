@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const arr = [1,2,3,4];
+        /* 기존방법
+        let a1 = arr[0];
+        let a2 = arr[1];
+        let a3 = arr[2];
+        let a4 = arr[3];
+        */
+        let [a1, a2, a3, a4] = arr; //구조 재할당
+        console.log(a1)
+        console.log(a4)
+
+        let [n1, , , n2] = arr; // 0번째, 3번째만 재할당
+        console.log(n1, n2);
+
+        let [...all] = arr; // 배열로 재할당
+        console.log(all); 
+
+        let [x1, x2, ...x3] = arr; // 나머지 뒤에 있는 값은 배열로 재할당
+        console.log(x1, x2, x3);
+
+        console.log("----------------------------------");
+
+        let person = {
+            name: "엄준식",
+            age: 45, 
+            job: ["daumpot pd"],
+            info: {id: "aaa123", email: "naver"}
+        }
+
+        // console.log(person.age, person["age"]);
+
+        let {name, age, job} = person;
+        console.log(name, age, job);
+
+        // 다른이름으로 가져오기
+        let {name: aaa, age: bbb} = person;
+        console.log(aaa, bbb);
+
+        /////////////////////////////////////////////
+        // 객체에서 구조재할당
+        let {info : {id, email}} = person; // person의 info 안에 있는 id와 email
+        console.log(id, email);
+
+        // info 안에 있는 id를 x이름으로, email을 y로
+        let {info : {id: x, email: y}} = person;
+        console.log(x, y);
+
+        console.log("---------------------------------")
+        
+        let list = [
+            {
+                "num" : 1,
+                "title" : "hello",
+                "info": ["banana", "apple"], 
+                "profile" : {"birth": "20201111", "img": "https://wwww.test.com/1"}
+            },
+            {
+                "num" : 1,
+                "title" : "hello",
+                "info": ["melon", "orange"], 
+                "profile" : {"birth": "20201212", "img": "https://wwww.test.com/2"}
+            }
+        ]
+        // list 안에 2번째 요소에서 profile안에 있는 img를 구조분해할당.
+        console.log(list[1]);
+        let { profile:{ img: abc}} = list[1];
+        console.log(abc);
+
+
+
+
+    </script>
+    
+</body>
+</html>

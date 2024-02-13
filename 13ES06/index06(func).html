@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // 익명함수
+        // a() 당겨쓰기 안 됨
+        
+        // let a = function() {
+        //     console.log(1);
+        // }
+
+        // let a = () => {
+        //     console.log(123);
+        // }
+
+        // 문법1 - 구문이 1개면 {} 생략이 가능, 그리고 자동으로 리턴
+        let b = (a, b) => console.log(a + b);
+        b(1,2);
+
+        let c = (a) => a + 10; // 자동 리턴
+        console.log(c(10));
+
+        // 문법2 - 매개변수가 1개라면, () 생략이 가능
+        let d = a => a + 10; // 함수
+        console.log(d(10));
+
+        // 문법3 - 객체를 리턴하고 싶으면 ()로 묶으면 됨
+        // let e = () => {
+        //     return {key: 20};
+        // }
+
+        let e = () => ({key: 20}) // 위랑 같은 구문
+        console.log(e());
+
+        // let f = a => ({key: a});
+
+        // setInterval(function() {}, 2000);
+        setInterval( () => {}, 2000);
+
+        // 이런식으로 가능
+        x.addEventListener("click", function() {});
+        x.addEventListener("click", () => {});
+
+        fetch("~~~").then((response) => {}) 
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
